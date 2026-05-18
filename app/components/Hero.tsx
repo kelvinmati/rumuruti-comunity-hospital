@@ -1,110 +1,57 @@
+import { Activity, Users } from 'lucide-react'
 import React from 'react'
-import { useBookingModal } from '~/context/BookingModalContext'
 
 const Hero = () => {
-  const { openModal } = useBookingModal()
-
   return (
-      <section
-        id="home"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
-        style={{
-          background: "linear-gradient(135deg, #2f7bb4 0%, #1a5a8a 55%, #0e3a5c 100%)",
-        }}
-      >
-        {/* Decorative circles */}
-        <div
-          className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 pointer-events-none"
-          style={{ background: "#b09a2e", transform: "translate(40%, -40%)" }}
-        />
-        <div
-          className="absolute bottom-0 left-0 w-72 h-72 rounded-full opacity-10 pointer-events-none"
-          style={{ background: "#b09a2e", transform: "translate(-40%, 40%)" }}
-        />
-        {/* Gold diagonal stripe */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(105deg, transparent 60%, rgba(176,154,46,0.08) 60%, rgba(176,154,46,0.08) 70%, transparent 70%)",
-          }}
-        />
-
-        <div
-          className="relative z-10 text-center px-6 max-w-3xl mx-auto"
-
-        >
-          <h1
-            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
-            style={{ color: "#fff", lineHeight: 1.1, letterSpacing: "-0.02em" }}
-          >
-         <span >  Affordable &{" "}</span>
-            <span
-              style={{
-                color: "#b09a2e",
-                display: "inline-block",
-                fontStyle: "italic",
-              }}
-            >
-              Reliable
-            </span>{" "}
-            <br />
-            Home Cleaners
-          </h1>
-
-          <p
-            className="text-lg md:text-xl mb-10 leading-relaxed"
-            style={{ color: "rgba(255,255,255,0.8)", maxWidth: "520px", margin: "0 auto 2.5rem" }}
-          >
-            Experienced, insured, and police checked staff  giving you complete peace of mind in your own home.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              type='button'
-              onClick={openModal}
-              className="px-8 py-4 rounded-full font-semibold tracking-wide transition-all duration-200 hover:scale-105"
-              style={{
-                background: "#b09a2e",
-                color: "#fff",
-                letterSpacing: "0.06em",
-                boxShadow: "0 4px 24px rgba(176,154,46,0.4)",
-              }}
-            >
-              Get In Touch
-            </button>
-            <a
-              href="tel:07781103864"
-              className="px-8 py-4 rounded-full font-semibold tracking-wide transition-all duration-200 hover:scale-105"
-              style={{
-                background: "rgba(255,255,255,0.12)",
-                color: "#fff",
-                border: "1.5px solid rgba(255,255,255,0.35)",
-                letterSpacing: "0.06em",
-              }}
-            >
-              07781 103864
-            </a>
+    <div>
+        <section className="relative py-0 px-6 overflow-hidden bg-[#f8fafc]">
+  
+      
+        <div className="max-w-[90%] mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 className="mt-6 text-5xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+              Your support. <br />
+              <span className="text-blue-600">Their access.</span> <br />
+              A healthier future.
+            </h1>
+            <p className="mt-6 text-lg text-slate-600 leading-relaxed max-w-lg">
+              Rumuruti Community Hospital is dedicated to providing world-class healthcare 
+              that remains accessible to everyone. We believe quality care is a right, not a privilege.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-blue-200 transition-all">
+                Donate to Support
+              </button>
+              <button className="bg-white border-2 border-slate-200 hover:border-blue-600 px-8 py-4 rounded-xl font-bold transition-all">
+                View Services
+              </button>
+            </div>
           </div>
-
-          <p className="mt-5 text-sm" style={{ color: "rgba(255,255,255,0.45)" }}>
-            24HR Answer Phone Available
-          </p>
-        </div>
-
-        {/* Scroll hint */}
-        <div
-          className="absolute bottom-10 left-1/2 flex flex-col items-center gap-2"
-          style={{ transform: "translateX(-50%)", opacity: 0.5 }}
-        >
-          <div
-            className="w-px h-12"
-            style={{
-              background: "linear-gradient(to bottom, rgba(255,255,255,0.6), transparent)",
-            }}
-          />
+          
+          <div className="relative">
+            <div className="bg-gradient-to-tr from-blue-100 to-emerald-50 rounded-3xl p-4">
+              <img 
+                src="https://images.unsplash.com/photo-1586773860418-d3b9a8ec81c2?auto=format&fit=crop&q=80&w=800" 
+                alt="Modern Hospital Facility" 
+                className="rounded-2xl shadow-2xl"
+              />
+            </div>
+            {/* Stats Card */}
+            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 hidden sm:block">
+              <div className="flex items-center gap-4">
+                <div className="bg-emerald-100 p-3 rounded-full text-emerald-600">
+                  <Users size={24} />
+                </div>
+                <div>
+                  <p className="text-sm text-slate-500 font-medium">Patients Served</p>
+                  <p className="text-2xl font-bold text-slate-900">12,400+</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+    </div>
   )
 }
 

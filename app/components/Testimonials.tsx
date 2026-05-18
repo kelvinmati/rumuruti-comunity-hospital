@@ -222,7 +222,7 @@ const Testimonials = () => {
                 alt="Happy First Choice Domestic customer"
                 className="testimonial-hero-img"
               />
-              {/* <div className="image-badge">Trusted Since 2016</div> */}
+        
             </div>
           </div>
 

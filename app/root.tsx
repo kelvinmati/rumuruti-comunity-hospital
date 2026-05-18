@@ -13,9 +13,9 @@ function AppLayout() {
     <>
       <Navbar />
       <main>
-        <Outlet />
+       <Outlet />
       </main>
-      <Footer />
+      {/* <Footer /> */}
       <WhatsAppChat />
       <BookingModal isOpen={isOpen} onClose={closeModal} />
       <ScrollRestoration />

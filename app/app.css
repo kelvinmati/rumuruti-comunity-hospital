@@ -3,63 +3,10 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --color-blue: #2f7bb4;
-  --color-yellow: #b09a2e;
+  --color-primary-blue: #182f5a;
+  --color-secondary-blue: #066982;
+  --color-pink: #d22966;
 
   --width-container: 85%;
 
 }
-
-@keyframes services-float {
-  0%,
-  100% {
-    transform: translateY(0px) scale(1);
-  }
-  50% {
-    transform: translateY(-14px) scale(1.03);
-  }
-}
-
-@keyframes services-rise {
-  0% {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.services-shape-float {
-  animation: services-float 7.5s ease-in-out infinite;
-}
-
-.services-shape-delay {
-  animation-delay: 1.8s;
-}
-
-.services-card-hover {
-  animation: services-rise 0.6s ease-out both;
-  transition: transform 300ms ease, box-shadow 300ms ease;
-}
-
-.services-card-hover:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 32px rgba(26, 90, 138, 0.12);
-}
-
-.services-card-delay {
-  animation-delay: 0.16s;
-}
-
-.services-item-rise {
-  opacity: 0;
-  animation: services-rise 0.5s ease-out forwards;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-
