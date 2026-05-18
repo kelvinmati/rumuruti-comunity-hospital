@@ -13,7 +13,13 @@ const Navbar = () => {
           <span className="flex items-center gap-1"><MapPin size={14} /> Rumuruti Town, Kenya</span>
         </div>
       </div>
-            <nav className="sticky w-[90%] mx-auto top-0 z-50 bg-[#f8fafc] backdrop-blur-md  px-6 py-4 flex justify-between items-center">
+            <nav className="sticky w-[90%] mx-auto top-0 z-50  backdrop-blur-md  px-6 py-4 flex justify-between items-center" 
+                    style={{
+          background:
+            'radial-gradient(60rem 30rem at 10% 10%, color-mix(in srgb, var(--color-secondary-blue) 16%, white), transparent 70%), radial-gradient(50rem 26rem at 100% 5%, color-mix(in srgb, var(--color-pink) 12%, white), transparent 75%), linear-gradient(135deg, color-mix(in srgb, var(--color-primary-blue) 8%, white), #ffffff 62%)'
+        }}
+            
+            >
         {/* <div className="flex items-center gap-2">
           <div className="bg-blue-600 p-2 rounded-lg">
             <Activity className="text-white" size={24} />
@@ -24,10 +30,12 @@ const Navbar = () => {
           <img  src={logo}  className='h-[180px] '  alt="Rumuruti Community Hospital" />
         </div>
         <div className="hidden md:flex gap-8 font-medium text-slate-600">
-          <a href="#" className="hover:text-blue-600 transition">Services</a>
-          <a href="#" className="hover:text-blue-600 transition">Our Doctors</a>
-          <a href="#" className="hover:text-blue-600 transition">Community</a>
-          <a href="#" className="hover:text-blue-600 transition">Contact</a>
+          <a href="#" className="hover:text-blue-600 transition">Home</a>
+          <a href="#" className="hover:text-blue-600 transition">About us</a>
+          <a href="#" className="hover:text-blue-600 transition">Our services</a>
+          <a href="#" className="hover:text-blue-600 transition">Testimonials</a>
+
+          <a href="#" className="hover:text-blue-600 transition">Contact & location</a>
         </div>
         <div className='flex gap-3'>
                   <button className="bg-pink text-white px-5 py-2.5 rounded-full font-semibold transition flex items-center gap-2">

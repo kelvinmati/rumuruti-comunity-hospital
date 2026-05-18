@@ -1,232 +1,228 @@
-import React, { useState, useEffect, useRef } from 'react'
-import '../styles/testimonials.css'
-
-interface Testimonial {
-  id: number
-  name: string
-  role: string
-  content: string
-  initials: string
-  rating: number
-  company?: string
-}
-
-const TESTIMONIALS: Testimonial[] = [
-  {
-    id: 1,
-    name: 'Sarah Johnson',
-    role: 'Homeowner',
-    content: 'Exceptional service! The team was professional, courteous, and completed everything on schedule. Our home has never looked so spotless — I couldn\'t recommend them more highly.',
-    initials: 'SJ',
-    rating: 5,
-    company: 'Manhattan, NY',
-  },
-  {
-    id: 2,
-    name: 'Michael Chen',
-    role: 'Business Owner',
-    content: 'We switched to First Choice for our office cleaning and haven\'t looked back. Reliable and thorough every single time. Our workspace morale has genuinely improved.',
-    initials: 'MC',
-    rating: 5,
-    company: 'Brooklyn, NY',
-  },
-  {
-    id: 3,
-    name: 'Emma Williams',
-    role: 'Property Manager',
-    content: 'Managing multiple properties is tough, but First Choice makes it simple. Their attention to detail is unmatched and my tenants have never been happier.',
-    initials: 'EW',
-    rating: 5,
-    company: 'Queens, NY',
-  },
-  {
-    id: 4,
-    name: 'David Rodriguez',
-    role: 'Restaurant Owner',
-    content: 'Professional deep cleaning for our restaurant. They understand commercial hygiene standards and deliver consistently. Inspectors have praised our cleanliness since we hired them.',
-    initials: 'DR',
-    rating: 5,
-    company: 'Manhattan, NY',
-  },
-  {
-    id: 5,
-    name: 'Jessica Lee',
-    role: 'Busy Professional',
-    content: 'Finally found a cleaning service I can trust! They transformed my apartment and I couldn\'t be happier. Booking is easy and the team is always on time.',
-    initials: 'JL',
-    rating: 5,
-    company: 'Long Island, NY',
-  },
-]
-
-const AVATAR_COLORS = ['#667eea', '#48bb78', '#ed8936', '#e53e3e', '#9f7aea']
+import React, { useEffect, useState } from 'react'
 
 const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [imageVisible, setImageVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
-  const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const [activeIndex, setActiveIndex] = useState(0)
 
-  const currentTestimonial = TESTIMONIALS[currentIndex]
-  const relatedTestimonials = TESTIMONIALS.filter(t => t.id !== currentTestimonial.id).slice(0, 2)
+  const testimonials = [
+    {
+      name: 'Jane Wanjiku',
+      role: 'Mother of Two',
+      service: 'Maternity & Postnatal Care',
+      quote:
+        'The nurses were warm, patient, and always explained each step clearly. I felt safe from the first visit through delivery and follow-up.',
+      rating: 5,
+      accent: 'var(--color-pink)',
+      waitTime: 'Seen in 18 mins'
+    },
+    {
+      name: 'Peter Mwangi',
+      role: 'Farmer',
+      service: 'Emergency & Urgent Care',
+      quote:
+        'After an accident, the emergency team acted quickly and professionally. Their response and communication made a difficult day manageable.',
+      rating: 5,
+      accent: 'var(--color-secondary-blue)',
+      waitTime: 'Triage in 7 mins'
+    },
+    {
+      name: 'Grace Njeri',
+      role: 'Teacher',
+      service: 'Outpatient & Specialist Clinic',
+      quote:
+        'I appreciate how the doctors listen and tailor treatment to real life needs. Follow-up reminders helped me stay on track with care.',
+      rating: 5,
+      accent: 'var(--color-primary-blue)',
+      waitTime: 'Follow-up in 2 days'
+    },
+        {
+      name: 'Peter Mwangi',
+      role: 'Farmer',
+      service: 'Emergency & Urgent Care',
+      quote:
+        'After an accident, the emergency team acted quickly and professionally. Their response and communication made a difficult day manageable.',
+      rating: 5,
+      accent: 'var(--color-secondary-blue)',
+      waitTime: 'Triage in 7 mins'
+    },
+  ]
 
-  // Intersection observer — slide image in from right on scroll into view
+  const slides = []
+  for (let i = 0; i < testimonials.length; i += 2) {
+    slides.push(testimonials.slice(i, i + 2))
+  }
+
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setImageVisible(true) },
-      { threshold: 0.25 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
-
-  const startAutoPlay = () => {
-    if (autoPlayRef.current) clearInterval(autoPlayRef.current)
-    autoPlayRef.current = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % TESTIMONIALS.length)
+    const intervalId = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % slides.length)
     }, 6000)
+
+    return () => clearInterval(intervalId)
+  }, [slides.length])
+
+  const goToNext = () => {
+    setActiveIndex((current) => (current + 1) % slides.length)
   }
 
-  useEffect(() => {
-    startAutoPlay()
-    return () => { if (autoPlayRef.current) clearInterval(autoPlayRef.current) }
-  }, [])
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index)
-    startAutoPlay()
+  const goToPrevious = () => {
+    setActiveIndex((current) => (current - 1 + slides.length) % slides.length)
   }
-
-  const handlePrev = () => goToSlide((currentIndex - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)
-  const handleNext = () => goToSlide((currentIndex + 1) % TESTIMONIALS.length)
 
   return (
-    <section className="testimonials-section" ref={sectionRef}>
-      <div className="testimonials-container">
-        {/* Header */}
-        <div className="testimonials-header">
-          <span className="section-label ">Testimonials</span>
-          <h2>What Our Clients Say</h2>
-          <p>Join thousands of satisfied customers who trust First Choice Domestic</p>
-        </div>
+    <section className="relative overflow-hidden py-24">
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(36rem 22rem at 0% 0%, color-mix(in srgb, var(--color-primary-blue) 12%, white), transparent 70%), radial-gradient(30rem 20rem at 95% 8%, color-mix(in srgb, var(--color-pink) 11%, white), transparent 74%), linear-gradient(180deg, #fff 0%, color-mix(in srgb, var(--color-secondary-blue) 5%, white) 100%)'
+        }}
+      />
 
-        {/* Main two-column layout */}
-        <div className="testimonials-body">
+      <div className="relative mx-auto w-[90%]">
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div>
+            <p
+              className="inline-flex rounded-full px-4 py-2 text-sm font-semibold"
+              style={{
+                color: 'var(--color-primary-blue)',
+                backgroundColor: 'color-mix(in srgb, var(--color-secondary-blue) 12%, white)'
+              }}
+            >
+              Patient Voices
+            </p>
+            <h2
+              className="mt-5 text-4xl font-black leading-tight md:text-5xl"
+              style={{ color: 'var(--color-primary-blue)' }}
+            >
+              Trusted by families seeking
+              <span className="block" style={{ color: 'var(--color-pink)' }}>
+                compassionate hospital care.
+              </span>
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
+              Real experiences from patients and caregivers who have received maternity, emergency,
+              outpatient, and follow-up support at Rumuruti Community Hospital.
+            </p>
 
-          {/* LEFT — Slider + Stats */}
-          <div className="testimonials-left">
-
-            {/* Carousel */}
-            <div className="carousel-wrapper">
-              <div className="carousel-slide fade-in" key={currentIndex}>
-                <div className="quote-mark">"</div>
-                <p className="testimonial-content">{currentTestimonial.content}</p>
-
-                <div className="testimonial-meta">
-                  <div
-                    className="testimonial-avatar"
-                    style={{ background: AVATAR_COLORS[(currentIndex) % AVATAR_COLORS.length] }}
-                  >
-                    {currentTestimonial.initials}
-                  </div>
-                  <div className="testimonial-info">
-                    <h4>{currentTestimonial.name}</h4>
-                    <p className="testimonial-role">{currentTestimonial.role}</p>
-                    {currentTestimonial.company && (
-                      <p className="testimonial-location">📍 {currentTestimonial.company}</p>
-                    )}
-                  </div>
-                  <div className="testimonial-stars">
-                    {[...Array(currentTestimonial.rating)].map((_, i) => (
-                      <span key={i}>★</span>
-                    ))}
-                  </div>
-                </div>
+            {/* <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-white/75 bg-white/90 p-4 shadow-sm">
+                <p className="text-3xl font-extrabold" style={{ color: 'var(--color-primary-blue)' }}>
+                  4.9/5
+                </p>
+                <p className="text-sm font-medium text-slate-500">Patient satisfaction</p>
               </div>
-
-              {/* Controls row */}
-              <div className="carousel-controls">
-                <div className="carousel-dots">
-                  {TESTIMONIALS.map((_, index) => (
-                    <button
-                      key={index}
-                      className={`dot ${index === currentIndex ? 'active' : ''}`}
-                      onClick={() => goToSlide(index)}
-                      aria-label={`Go to testimonial ${index + 1}`}
-                    />
-                  ))}
-                </div>
-                <div className="carousel-arrows">
-                  <button className="arrow-btn" onClick={handlePrev} aria-label="Previous">&#8592;</button>
-                  <button className="arrow-btn" onClick={handleNext} aria-label="Next">&#8594;</button>
-                </div>
+              <div className="rounded-2xl border border-white/75 bg-white/90 p-4 shadow-sm">
+                <p className="text-3xl font-extrabold" style={{ color: 'var(--color-secondary-blue)' }}>
+                  12k+
+                </p>
+                <p className="text-sm font-medium text-slate-500">Annual visits</p>
               </div>
-            </div>
-
-            {/* Stats Box */}
-            <div className="testimonials-stats">
-              <div className="stat">
-                <h4>500+</h4>
-                <p>Happy Clients</p>
+              <div className="rounded-2xl border border-white/75 bg-white/90 p-4 shadow-sm">
+                <p className="text-3xl font-extrabold" style={{ color: 'var(--color-pink)' }}>
+                  24/7
+                </p>
+                <p className="text-sm font-medium text-slate-500">Emergency response</p>
               </div>
-              <div className="stat">
-                <h4>5.0★</h4>
-                <p>Average Rating</p>
-              </div>
-              <div className="stat">
-                <h4>100%</h4>
-                <p>Satisfaction</p>
-              </div>
-              <div className="stat">
-                <h4>8+</h4>
-                <p>Years Experience</p>
-              </div>
-            </div>
+            </div> */}
           </div>
 
-          {/* RIGHT — Image + side picks stacked on top */}
-          <div className={`testimonials-right ${imageVisible ? 'slide-in-right' : ''}`}>
-            {/* Related / side-pick cards sit above the photo */}
-            <div className="side-picks">
-              {relatedTestimonials.map((t, i) => (
-                <div
-                  key={t.id}
-                  className="side-card"
-                  onClick={() => goToSlide(TESTIMONIALS.findIndex(x => x.id === t.id))}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={e => e.key === 'Enter' && goToSlide(TESTIMONIALS.findIndex(x => x.id === t.id))}
-                >
-                  <div
-                    className="side-avatar"
-                    style={{ background: AVATAR_COLORS[(TESTIMONIALS.findIndex(x => x.id === t.id)) % AVATAR_COLORS.length] }}
-                  >
-                    {t.initials}
-                  </div>
-                  <div className="side-body">
-                    <div className="side-name-row">
-                      <strong>{t.name}</strong>
-                      <span className="side-stars">{'★'.repeat(t.rating)}</span>
-                    </div>
-                    <p className="side-excerpt">"{t.content.substring(0, 72)}…"</p>
-                    <span className="side-role">{t.role} · {t.company}</span>
-                  </div>
+          <div className="rounded-3xl border border-white/70 bg-white/80 p-7 shadow-xl backdrop-blur">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">What Patients Mention Most</p>
+            <div className="mt-5 space-y-4">
+              {['Respectful communication', 'Shorter wait times', 'Clear treatment guidance', 'Supportive nursing team'].map((item) => (
+                <div key={item} className="flex items-center gap-3 rounded-xl bg-white p-3 shadow-sm">
+                  <span
+                    className="h-2.5 w-2.5 rounded-full"
+                    style={{ backgroundColor: 'var(--color-secondary-blue)' }}
+                  />
+                  <p className="font-medium text-slate-700">{item}</p>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
 
-            {/* The hero image */}
-            <div className="testimonial-image-frame">
-              <img
-                src="/testimonial.avif"
-                alt="Happy First Choice Domestic customer"
-                className="testimonial-hero-img"
-              />
-        
+        <div className="mt-12 rounded-3xl border border-white/70 bg-white/70 p-4 shadow-lg backdrop-blur md:p-6">
+          <div className="overflow-hidden rounded-3xl">
+            <div
+              className="flex transition-transform duration-700 ease-out"
+              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+            >
+              {slides.map((slide, slideIndex) => (
+                <div key={`slide-${slideIndex}`} className="grid w-full shrink-0 gap-5 lg:grid-cols-2">
+                  {slide.map((testimonial) => (
+                    <article
+                      key={testimonial.name}
+                      className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/95 p-7 shadow-lg md:p-10"
+                    >
+                      <div
+                        className="absolute right-0 top-0 h-24 w-24 translate-x-7 -translate-y-7 rounded-full opacity-30 blur-2xl"
+                        style={{ backgroundColor: testimonial.accent }}
+                      />
+
+
+
+                      <p className="relative mt-5 max-w-3xl text-lg leading-8 text-slate-700">"{testimonial.quote}"</p>
+
+                      <div className="relative mt-6">
+                        <div className="mb-2 flex gap-1 text-lg" style={{ color: 'var(--color-pink)' }}>
+                          {Array.from({ length: testimonial.rating }).map((_, idx) => (
+                            <span key={`${testimonial.name}-${idx}`}>★</span>
+                          ))}
+                        </div>
+                        <p className="text-lg font-extrabold" style={{ color: 'var(--color-primary-blue)' }}>
+                          {testimonial.name}
+                        </p>
+                        <p className="text-sm font-medium text-slate-500">{testimonial.role}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              ))}
             </div>
           </div>
 
+          <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+              {slides.map((_, idx) => (
+                <button
+                  key={`dot-${idx}`}
+                  type="button"
+                  onClick={() => setActiveIndex(idx)}
+                  className="h-2.5 rounded-full transition-all"
+                  style={{
+                    width: activeIndex === idx ? '2rem' : '0.7rem',
+                    backgroundColor: activeIndex === idx ? 'var(--color-pink)' : 'color-mix(in srgb, var(--color-primary-blue) 24%, white)'
+                  }}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+
+            <div className="flex gap-2">
+              <button
+                type="button"
+                onClick={goToPrevious}
+                className="rounded-lg px-4 py-2 text-sm font-semibold transition-colors"
+                style={{
+                  color: 'var(--color-primary-blue)',
+                  backgroundColor: 'color-mix(in srgb, var(--color-primary-blue) 10%, white)'
+                }}
+              >
+                Previous
+              </button>
+              <button
+                type="button"
+                onClick={goToNext}
+                className="rounded-lg px-4 py-2 text-sm font-semibold text-white"
+                style={{ backgroundColor: 'var(--color-secondary-blue)' }}
+              >
+                Next
+              </button>
+            </div>
+          </div>
         </div>
+
+
       </div>
     </section>
   )
