@@ -65,7 +65,7 @@ const Hero = () => {
         <div className='hidden md:flex gap-3'>
                   <button
                     className="bg-pink text-white px-5 py-2.5 rounded-full font-semibold transition flex items-center gap-2"
-                    onClick={openDonateModal}
+                    // onClick={openDonateModal}
                   >
           <Calendar size={18} />Donate
         </button>
@@ -104,10 +104,10 @@ const Hero = () => {
             <div className="mt-4 flex flex-col gap-2">
               <button
                 className="bg-pink text-white px-4 py-2.5 rounded-full font-semibold transition flex items-center justify-center gap-2"
-                onClick={() => {
-                  closeMobileMenu()
-                  openDonateModal()
-                }}
+                // onClick={() => {
+                //   closeMobileMenu()
+                //   openDonateModal()
+                // }}
               >
                 <Calendar size={18} />Donate
               </button>
@@ -131,7 +131,7 @@ const Hero = () => {
 
 
           <h1
-            className="mt-6 text-4xl font-extrabold leading-tight md:text-6xl"
+            className="mt-6 text-4xl font-extrabold leading-tight md:text-5xl"
             style={{ color: 'var(--color-primary-blue)' }}
           >
             Better health access starts
@@ -148,7 +148,7 @@ const Hero = () => {
           <div className="mt-10 flex flex-wrap gap-4">
             <button
               className="inline-flex mb-3 items-center gap-2 rounded-xl px-5 py-3 text-primary-blue border transition-all hover:-translate-y-0.5"
-              onClick={openDonateModal}
+              // onClick={openDonateModal}
               // style={{
               //   backgroundColor: 'var(--color-secondary-blue)',
               //   boxShadow: '0 12px 30px color-mix(in srgb, var(--color-secondary-blue) 28%, transparent)'

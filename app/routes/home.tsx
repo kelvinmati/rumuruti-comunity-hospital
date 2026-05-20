@@ -11,11 +11,12 @@ const home = () => {
   return (
     <div>
      <Hero/>
-     <section id="about" className="scroll-mt-28">
-      <Gallarey/>
-     </section>
+
      <section id="services" className="scroll-mt-28">
       <Services/>
+     </section>
+          <section id="about" className="scroll-mt-28">
+      <Gallarey/>
      </section>
      <section id="testimonials" className="scroll-mt-28">
       <Testimonials/>
