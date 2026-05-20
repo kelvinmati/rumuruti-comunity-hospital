@@ -1,10 +1,22 @@
-import { ArrowRight, Calendar, Clock, HeartPulse, MapPin, Phone, ShieldCheck, Users } from 'lucide-react'
-import React from 'react'
+import { ArrowRight, Calendar, Clock, MapPin, Menu, Phone, X, Users } from 'lucide-react'
+import React, { useState } from 'react'
 import logo from "../../public/logo-removebg-preview.png"
 import hero from "../../public/hero.jpeg"
 const Hero = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const navLinks = [
+    { label: 'Home', href: '#home' },
+    { label: 'About us', href: '#about' },
+    { label: 'Our services', href: '#services' },
+    { label: 'Testimonials', href: '#testimonials' },
+    { label: 'Contact & location', href: '#contact-location' }
+  ]
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false)
+
   return (
-    <section className="relative  ">
+    <section id="home" className="relative scroll-mt-28">
       <div
         className="pointer-events-none  inset-0"
         style={{
@@ -18,7 +30,7 @@ const Hero = () => {
               <span className="flex items-center gap-1"><Phone size={14} /> Emergency: +254 700 000 000</span>
               <span className="hidden md:flex items-center gap-1"><Clock size={14} /> 24/7 Care</span>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 hidden md:flex">
               <span className="flex items-center gap-1"><MapPin size={14} /> Rumuruti Town, Kenya</span>
             </div>
         </div>
@@ -27,7 +39,7 @@ const Hero = () => {
 
 
 
-            <nav className="sticky w-[90%] mx-auto top-0 z-50  backdrop-blur-md  flex justify-between items-center"            >
+            <nav className="sticky w-[90%] mx-auto top-0 z-50 backdrop-blur-md flex flex-wrap justify-between items-center gap-3"            >
         {/* <div className="flex items-center gap-2">
           <div className="bg-blue-600 p-2 rounded-lg">
             <Activity className="text-white" size={24} />
@@ -35,16 +47,16 @@ const Hero = () => {
           <span className="text-xl font-bold tracking-tight text-blue-900">Rumuruti Community</span>
         </div> */}
         <div>
-          <img  src={logo}  className='h-[180px] '  alt="Rumuruti Community Hospital" />
+          <img  src={logo}  className='md:h-[180px] h-[100px] w-auto'  alt="Rumuruti Community Hospital" />
         </div>
         <div className="hidden md:flex gap-8 font-medium text-slate-600">
-      <a href="#" className="hover:text-blue-600 transition">Home</a>
-          <a href="#" className="hover:text-blue-600 transition">About us</a>
-          <a href="#" className="hover:text-blue-600 transition">Our services</a>
-          <a href="#" className="hover:text-blue-600 transition">Testimonials</a>
-          <a href="#" className="hover:text-blue-600 transition">Contact & location</a>
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href} className="hover:text-blue-600 transition">
+              {link.label}
+            </a>
+          ))}
         </div>
-        <div className='flex gap-3'>
+        <div className='hidden md:flex gap-3'>
                   <button className="bg-pink text-white px-5 py-2.5 rounded-full font-semibold transition flex items-center gap-2">
           <Calendar size={18} />Donate
         </button>
@@ -52,6 +64,41 @@ const Hero = () => {
           <Calendar size={18} /> Book Appointment
         </button>
         </div>
+
+        <button
+          type="button"
+          className="md:hidden inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white p-2 text-slate-700"
+          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={isMobileMenuOpen}
+        >
+          {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+
+        {isMobileMenuOpen && (
+          <div className="w-full md:hidden  bg-white/95 ">
+            <div className="flex flex-col gap-3 font-medium text-slate-700">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMobileMenu}
+                  className="rounded-md px-2 py-2 transition hover:bg-slate-100"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+            <div className="mt-4 flex flex-col gap-2">
+              <button className="bg-pink text-white px-4 py-2.5 rounded-full font-semibold transition flex items-center justify-center gap-2">
+                <Calendar size={18} />Donate
+              </button>
+              <button className="bg-primary-blue text-white px-4 py-2.5 rounded-full font-semibold transition flex items-center justify-center gap-2">
+                <Calendar size={18} /> Book Appointment
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
     </div>
 
@@ -76,24 +123,16 @@ const Hero = () => {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <button
-              className="inline-flex items-center gap-2 rounded-xl px-8 py-4 font-bold text-white transition-all hover:-translate-y-0.5"
-              style={{
-                backgroundColor: 'var(--color-secondary-blue)',
-                boxShadow: '0 12px 30px color-mix(in srgb, var(--color-secondary-blue) 28%, transparent)'
-              }}
+              className="inline-flex mb-3 items-center gap-2 rounded-xl px-5 py-3 text-primary-blue border transition-all hover:-translate-y-0.5"
+              // style={{
+              //   backgroundColor: 'var(--color-secondary-blue)',
+              //   boxShadow: '0 12px 30px color-mix(in srgb, var(--color-secondary-blue) 28%, transparent)'
+              // }}
             >
               Donate to Support
               <ArrowRight size={18} />
             </button>
-            <button
-              className="rounded-xl border-2 bg-white px-8 py-4 font-bold transition-all"
-              style={{
-                borderColor: 'color-mix(in srgb, var(--color-primary-blue) 22%, white)',
-                color: 'var(--color-primary-blue)'
-              }}
-            >
-              View Services
-            </button>
+
           </div>
 
         </div>

@@ -34,7 +34,6 @@ const Navbar = () => {
           <a href="#" className="hover:text-blue-600 transition">About us</a>
           <a href="#" className="hover:text-blue-600 transition">Our services</a>
           <a href="#" className="hover:text-blue-600 transition">Testimonials</a>
-
           <a href="#" className="hover:text-blue-600 transition">Contact & location</a>
         </div>
         <div className='flex gap-3'>
