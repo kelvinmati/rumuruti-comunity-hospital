@@ -2,8 +2,12 @@ import { ArrowRight, Calendar, Clock, MapPin, Menu, Phone, X, Users } from 'luci
 import React, { useState } from 'react'
 import logo from "../../public/logo-removebg-preview.png"
 import hero from "../../public/hero.jpeg"
+import { useBookingModal } from '~/context/BookingModalContext'
+import DonationModal from './DonationModal'
 const Hero = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isDonateModalOpen, setIsDonateModalOpen] = useState(false)
+  const { openModal } = useBookingModal()
 
   const navLinks = [
     { label: 'Home', href: '#home' },
@@ -14,6 +18,8 @@ const Hero = () => {
   ]
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false)
+  const openDonateModal = () => setIsDonateModalOpen(true)
+  const closeDonateModal = () => setIsDonateModalOpen(false)
 
   return (
     <section id="home" className="relative scroll-mt-28">
@@ -57,10 +63,16 @@ const Hero = () => {
           ))}
         </div>
         <div className='hidden md:flex gap-3'>
-                  <button className="bg-pink text-white px-5 py-2.5 rounded-full font-semibold transition flex items-center gap-2">
+                  <button
+                    className="bg-pink text-white px-5 py-2.5 rounded-full font-semibold transition flex items-center gap-2"
+                    onClick={openDonateModal}
+                  >
           <Calendar size={18} />Donate
         </button>
-                <button className="bg-primary-blue text-white px-5 py-2.5 rounded-full font-semibold transition flex items-center gap-2">
+                <button
+                  className="bg-primary-blue text-white px-5 py-2.5 rounded-full font-semibold transition flex items-center gap-2"
+                  onClick={openModal}
+                >
           <Calendar size={18} /> Book Appointment
         </button>
         </div>
@@ -90,10 +102,22 @@ const Hero = () => {
               ))}
             </div>
             <div className="mt-4 flex flex-col gap-2">
-              <button className="bg-pink text-white px-4 py-2.5 rounded-full font-semibold transition flex items-center justify-center gap-2">
+              <button
+                className="bg-pink text-white px-4 py-2.5 rounded-full font-semibold transition flex items-center justify-center gap-2"
+                onClick={() => {
+                  closeMobileMenu()
+                  openDonateModal()
+                }}
+              >
                 <Calendar size={18} />Donate
               </button>
-              <button className="bg-primary-blue text-white px-4 py-2.5 rounded-full font-semibold transition flex items-center justify-center gap-2">
+              <button
+                className="bg-primary-blue text-white px-4 py-2.5 rounded-full font-semibold transition flex items-center justify-center gap-2"
+                onClick={() => {
+                  closeMobileMenu()
+                  openModal()
+                }}
+              >
                 <Calendar size={18} /> Book Appointment
               </button>
             </div>
@@ -124,6 +148,7 @@ const Hero = () => {
           <div className="mt-10 flex flex-wrap gap-4">
             <button
               className="inline-flex mb-3 items-center gap-2 rounded-xl px-5 py-3 text-primary-blue border transition-all hover:-translate-y-0.5"
+              onClick={openDonateModal}
               // style={{
               //   backgroundColor: 'var(--color-secondary-blue)',
               //   boxShadow: '0 12px 30px color-mix(in srgb, var(--color-secondary-blue) 28%, transparent)'
@@ -164,7 +189,7 @@ const Hero = () => {
                 <div>
                   <p className="text-sm font-medium text-slate-500">Patients Served</p>
                   <p className="text-2xl font-extrabold" style={{ color: 'var(--color-primary-blue)' }}>
-                    12,400+
+                    10,000+
                   </p>
                 </div>
               </div>
@@ -175,6 +200,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      <DonationModal isOpen={isDonateModalOpen} onClose={closeDonateModal} />
     </section>
   )
 }

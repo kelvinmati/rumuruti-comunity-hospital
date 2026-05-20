@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useBookingModal } from '~/context/BookingModalContext'
 
 const Services = () => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const { openModal } = useBookingModal()
   const services = [
     {
       title: 'Outpatient & Specialist Clinics',
@@ -168,7 +171,8 @@ const Services = () => {
               <h3 className="mt-2 text-3xl font-black leading-tight">Talk to our care team and get directed to the right service fast.</h3>
             </div>
             <button
-              className="rounded-xl px-7 py-4 text-sm font-bold transition-transform hover:-translate-y-0.5"
+                onClick={openModal}
+              className="rounded-xl px-6 cursor-pointer py-4 text-sm font-bold transition-transform hover:-translate-y-0.5"
               style={{
                 backgroundColor: 'var(--color-pink)',
                 boxShadow: '0 14px 26px color-mix(in srgb, var(--color-pink) 36%, transparent)'
