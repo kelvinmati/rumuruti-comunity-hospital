@@ -4,22 +4,22 @@ const steps = [
   {
     title: 'Tell Us Your Needs',
     description:
-      'Share your home size, preferred days, and any areas you want extra attention on.',
+      'Share whether you need antenatal, child health, emergency, or follow-up support.',
   },
   {
     title: 'Get Your Plan',
     description:
-      'We recommend the right cleaner and provide a clear, tailored cleaning plan for your home.',
+      'We direct you to the right service and outline the care pathway for your visit.',
   },
   {
     title: 'Book Your Visit',
     description:
-      'Choose a convenient slot, confirm details, and we lock in your first service date.',
+      'Choose a convenient slot, confirm details, and we lock in your appointment.',
   },
   {
-    title: 'Relax While We Clean',
+    title: 'Receive Care With Dignity',
     description:
-      'Your trusted cleaner arrives on time and delivers a thorough, reliable clean every visit.',
+      'Our team receives you with respect, clear communication, and the support you need.',
   },
 ]
 
@@ -41,10 +41,10 @@ const HowItWorks = () => {
             How It Works
           </p>
           <h2 className='text-3xl font-bold text-slate-900 sm:text-4xl'>
-            Four Simple Steps To A Cleaner Home
+            Four simple steps to better care
           </h2>
           <p className='mt-4 text-slate-600'>
-            A clear process from first message to spotless results.
+            A clear process from first message to care that supports mothers, children, and families.
           </p>
         </div>
 

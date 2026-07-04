@@ -11,9 +11,9 @@ const Hero = () => {
 
   const navLinks = [
     { label: 'Home', href: '#home' },
-    { label: 'About us', href: '#about' },
-    { label: 'Our services', href: '#services' },
-    { label: 'Testimonials', href: '#testimonials' },
+    { label: 'Our mission', href: '#about' },
+    { label: 'Care services', href: '#services' },
+    { label: 'Community stories', href: '#testimonials' },
     { label: 'Contact & location', href: '#contact-location' }
   ]
 
@@ -130,19 +130,31 @@ const Hero = () => {
         <div>
 
 
+          <p
+            className="inline-flex rounded-full px-4 py-2 text-sm font-semibold"
+            style={{
+              color: 'var(--color-primary-blue)',
+              backgroundColor: 'color-mix(in srgb, var(--color-secondary-blue) 12%, white)'
+            }}
+          >
+            Saving Mothers, Protecting Children, Strengthening Communities
+          </p>
+
           <h1
             className="mt-6 text-4xl font-extrabold leading-tight md:text-5xl"
             style={{ color: 'var(--color-primary-blue)' }}
           >
-            Better health access starts
+            Care that protects every stage of life
             <span className="block" style={{ color: 'var(--color-pink)' }}>
-              with community support.
+              from motherhood to childhood and beyond.
             </span>
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
-            Rumuruti Community Hospital delivers compassionate, high-quality treatment to patients of all
-            backgrounds, making reliable healthcare available when it matters most.
+            {/* Rumuruti Community Hospital exists to keep mothers safe, children healthy, and families
+            supported through respectful, reliable, and accessible care. */}
+
+            Quality Healthcare Within Reach. Delivering compassionate, accountable and accessible healthcare for Rumuruti and surrounding communities.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -154,7 +166,7 @@ const Hero = () => {
               //   boxShadow: '0 12px 30px color-mix(in srgb, var(--color-secondary-blue) 28%, transparent)'
               // }}
             >
-              Donate to Support
+              Support the Mission
               <ArrowRight size={18} />
             </button>
 
@@ -172,7 +184,7 @@ const Hero = () => {
           >
             <img
               src={hero}
-              alt="Modern Hospital Facility"
+              alt="Rumuruti Community Hospital care setting"
               className="h-[420px] w-full rounded-[1.5rem] object-cover shadow-2xl"
             />
           </div>
@@ -187,14 +199,14 @@ const Hero = () => {
                   <Users size={22} style={{ color: 'var(--color-secondary-blue)' }} />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-slate-500">Patients Served</p>
+                  <p className="text-sm font-medium text-slate-500">Families Supported</p>
                   <p className="text-2xl font-extrabold" style={{ color: 'var(--color-primary-blue)' }}>
                     10,000+
                   </p>
                 </div>
               </div>
               <p className="text-right text-sm font-semibold" style={{ color: 'var(--color-pink)' }}>
-                Community-powered healthcare
+                Care rooted in dignity and prevention
               </p>
             </div>
           </div>

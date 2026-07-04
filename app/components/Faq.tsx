@@ -2,29 +2,29 @@ import React from 'react'
 
 const faqs = [
   {
-    question: 'Do I need to provide cleaning supplies?',
+    question: 'How do I book maternal or child health care?',
     answer:
-      'No. Our team arrives with professional-grade supplies and equipment. If you prefer specific products for allergy or scent reasons, we are happy to use what you provide.',
+      'Use the book appointment button to request antenatal, postnatal, pediatric, or general care. Our team will confirm the next available slot.',
   },
   {
-    question: 'Are your cleaners background checked?',
+    question: 'Do you offer emergency care?',
     answer:
-      'Yes. Every cleaner is vetted, background checked, and trained before joining our team, so you can feel confident about who is in your home.',
+      'Yes. We provide urgent assessment and stabilization, and we coordinate referrals when advanced care is needed.',
   },
   {
-    question: 'How long does cleaning take?',
+    question: 'What services support expectant mothers?',
     answer:
-      'Most standard visits take between 2 and 4 hours depending on property size, room condition, and the level of service selected.',
+      'Antenatal checkups, delivery support, postnatal reviews, counseling, and newborn follow-up are all part of our maternal care pathway.',
   },
   {
-    question: 'Can I reschedule?',
+    question: 'Can children be seen for routine care?',
     answer:
-      'Absolutely. You can reschedule by contacting us in advance, and we will do our best to offer the next available slot that suits your schedule.',
+      'Yes. We support child health visits, immunization guidance, growth monitoring, and treatment for common childhood illness.',
   },
   {
-    question: 'Do you offer same-day cleaning?',
+    question: 'How can our community get involved?',
     answer:
-      'Yes, same-day appointments are available when slots open up. Contact us early and we will confirm availability right away.',
+      'Community members can support outreach, share health messages, and partner with us on prevention, education, and referral awareness.',
   },
 ]
 
@@ -38,7 +38,7 @@ const Faq = () => {
             Frequently Asked Questions
           </h2>
           <p className='mt-4 text-slate-600'>
-            Quick answers to the most common questions about our cleaning services.
+            Quick answers to the most common questions about maternal, child, and community health care.
           </p>
         </div>
 

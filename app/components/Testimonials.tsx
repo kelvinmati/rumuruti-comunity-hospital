@@ -7,7 +7,7 @@ const Testimonials = () => {
     {
       name: 'Jane Wanjiku',
       role: 'Mother of Two',
-      service: 'Maternity & Postnatal Care',
+      service: 'Maternal & Child Health',
       quote:
         'The nurses were warm, patient, and always explained each step clearly. I felt safe from the first visit through delivery and follow-up.',
       rating: 5,
@@ -17,7 +17,7 @@ const Testimonials = () => {
     {
       name: 'Peter Mwangi',
       role: 'Farmer',
-      service: 'Emergency & Urgent Care',
+      service: 'Emergency Care',
       quote:
         'After an accident, the emergency team acted quickly and professionally. Their response and communication made a difficult day manageable.',
       rating: 5,
@@ -27,23 +27,23 @@ const Testimonials = () => {
     {
       name: 'Grace Njeri',
       role: 'Teacher',
-      service: 'Outpatient & Specialist Clinic',
+      service: 'Accessible Healthcare',
       quote:
-        'I appreciate how the doctors listen and tailor treatment to real life needs. Follow-up reminders helped me stay on track with care.',
+        'I appreciate how the team listens and tailors care to real life needs. Follow-up reminders helped me stay on track with treatment.',
       rating: 5,
       accent: 'var(--color-primary-blue)',
       waitTime: 'Follow-up in 2 days'
     },
-        {
-      name: 'Peter Mwangi',
-      role: 'Farmer',
-      service: 'Emergency & Urgent Care',
+    {
+      name: 'Amina Hassan',
+      role: 'Community Health Volunteer',
+      service: 'Trust & Accountability',
       quote:
-        'After an accident, the emergency team acted quickly and professionally. Their response and communication made a difficult day manageable.',
+        'The team communicates clearly, works with the community, and shows the kind of stewardship that builds long-term trust.',
       rating: 5,
-      accent: 'var(--color-secondary-blue)',
-      waitTime: 'Triage in 7 mins'
-    },
+      accent: 'var(--color-pink)',
+      waitTime: 'Community partnership'
+    }
   ]
 
   const slides = []
@@ -87,7 +87,7 @@ const Testimonials = () => {
                 backgroundColor: 'color-mix(in srgb, var(--color-secondary-blue) 12%, white)'
               }}
             >
-              Patient Voices
+              Community Voices
             </p>
             <h2
               className="mt-5 text-4xl font-black leading-tight md:text-5xl"
@@ -95,12 +95,12 @@ const Testimonials = () => {
             >
               Trusted by families seeking
               <span className="block" style={{ color: 'var(--color-pink)' }}>
-                compassionate hospital care.
+                safe, respectful, and life-affirming care.
               </span>
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-              Real experiences from patients and caregivers who have received maternity, emergency,
-              outpatient, and follow-up support at Rumuruti Community Hospital.
+              Real experiences from mothers, caregivers, and community members who have received maternal,
+              child, emergency, and follow-up support at Rumuruti Community Hospital.
             </p>
 
             {/* <div className="mt-8 grid gap-3 sm:grid-cols-3">
@@ -126,9 +126,9 @@ const Testimonials = () => {
           </div>
 
           <div className="rounded-3xl border border-white/70 bg-white/80 p-7 shadow-xl backdrop-blur">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">What Patients Mention Most</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">What families mention most</p>
             <div className="mt-5 space-y-4">
-              {['Respectful communication', 'Shorter wait times', 'Clear treatment guidance', 'Supportive nursing team'].map((item) => (
+              {['Respectful maternal care', 'Child-focused follow-up', 'Clear treatment guidance', 'Supportive nursing team'].map((item) => (
                 <div key={item} className="flex items-center gap-3 rounded-xl bg-white p-3 shadow-sm">
                   <span
                     className="h-2.5 w-2.5 rounded-full"
@@ -162,6 +162,10 @@ const Testimonials = () => {
 
 
                       <p className="relative mt-5 max-w-3xl text-lg leading-8 text-slate-700">"{testimonial.quote}"</p>
+
+                      <p className="relative mt-4 text-sm font-semibold uppercase tracking-[0.12em] text-slate-500">
+                        {testimonial.service}
+                      </p>
 
                       <div className="relative mt-6">
                         <div className="mb-2 flex gap-1 text-lg" style={{ color: 'var(--color-pink)' }}>

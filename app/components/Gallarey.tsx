@@ -50,7 +50,7 @@ const Gallarey = () => {
                 backgroundColor: 'color-mix(in srgb, var(--color-secondary-blue) 12%, white)'
               }}
             >
-              Hospital Gallery
+              Care Gallery
             </p>
             <h2
               className="mt-5 text-4xl font-black leading-tight md:text-5xl"
@@ -58,7 +58,7 @@ const Gallarey = () => {
             >
               Moments of care,
               <span className="block" style={{ color: 'var(--color-pink)' }}>
-                service, and community impact.
+                service, and community trust.
               </span>
             </h2>
           </div>
@@ -77,7 +77,7 @@ const Gallarey = () => {
             >
               <img
                 src={image.src}
-                alt="Gallery image"
+                alt="Rumuruti Community Hospital care moment"
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />

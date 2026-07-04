@@ -31,14 +31,14 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex gap-8 font-medium text-slate-600">
           <a href="#" className="hover:text-blue-600 transition">Home</a>
-          <a href="#" className="hover:text-blue-600 transition">About us</a>
-          <a href="#" className="hover:text-blue-600 transition">Our services</a>
-          <a href="#" className="hover:text-blue-600 transition">Testimonials</a>
-          <a href="#" className="hover:text-blue-600 transition">Contact & location</a>
+          <a href="#about" className="hover:text-blue-600 transition">Our mission</a>
+          <a href="#services" className="hover:text-blue-600 transition">Care services</a>
+          <a href="#testimonials" className="hover:text-blue-600 transition">Community stories</a>
+          <a href="#contact-location" className="hover:text-blue-600 transition">Contact & location</a>
         </div>
         <div className='flex gap-3'>
                   <button className="bg-pink text-white px-5 py-2.5 rounded-full font-semibold transition flex items-center gap-2">
-          <Calendar size={18} />Donate
+          <Calendar size={18} />Support the Mission
         </button>
                 <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2.5 rounded-full font-semibold transition flex items-center gap-2">
           <Calendar size={18} /> Book Appointment

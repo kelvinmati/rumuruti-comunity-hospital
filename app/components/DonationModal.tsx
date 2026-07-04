@@ -37,7 +37,7 @@ const DonationModal = ({ isOpen, onClose }: DonationModalProps) => {
         <div className='flex items-start justify-between border-b border-slate-200 px-6 py-5'>
           <div>
             <h2 id='donation-modal-title' className='text-xl font-bold text-primary-blue'>
-              Donate to Support Patient Care
+              Support Mothers and Children
             </h2>
             {/* <p className='mt-1 text-sm text-slate-600'>
               Use any option below. Amount examples are sample figures.

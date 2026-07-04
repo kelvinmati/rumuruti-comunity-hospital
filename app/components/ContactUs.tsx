@@ -3,20 +3,20 @@ import React from 'react'
 const contactInfo = [
   {
     label: 'Phone',
-    value: '+44 7781 103864',
-    href: 'tel:+447781103864',
+    value: '+254 700 000 000',
+    href: 'tel:+254700000000',
     icon: '📞',
   },
   {
     label: 'Email',
-    value: 'firstchoicedomestic@suremail.gg',
-    href: 'mailto:firstchoicedomestic@suremail.gg',
+    value: 'rumuruti@gmail.com',
+    href: 'mailto:rumuruti@gmail.com',
     icon: '✉️',
   },
   {
     label: 'WhatsApp',
     value: 'Chat with us',
-    href: 'https://wa.me/447781103864',
+    href: 'https://wa.me/254700000000',
     icon: '💬',
   },
 ]
@@ -34,7 +34,7 @@ const ContactUs = () => {
         <div className='text-center'>
           <h1 className='text-4xl font-bold text-white sm:text-5xl'>Get In Touch</h1>
           <p className='mt-4 text-lg text-white/85'>
-            We're here to answer your questions and book your next cleaning service.
+            We are here to answer your questions, guide referrals, and support mothers, children, and families.
           </p>
         </div>
 

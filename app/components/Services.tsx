@@ -1,51 +1,44 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useBookingModal } from '~/context/BookingModalContext'
+import whyUsImage from '../../public/whyus.jpg'
 
 const Services = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-    const { openModal } = useBookingModal()
+  const { openModal } = useBookingModal()
   const services = [
     {
-      title: 'Outpatient & Specialist Clinics',
+      title: 'Maternal & Child Health',
       description:
-        'Same-day consultations with experienced clinicians in internal medicine, pediatrics, women health, and chronic care follow-up.',
+        'Safe pregnancy, safe delivery, and healthy childhood care that protects mothers and children through every stage.',
       accent: 'var(--color-primary-blue)',
-      details: ['General consultation', 'Pediatric follow-up', 'Hypertension & diabetes clinics']
+      details: ['Safe pregnancy', 'Safe delivery', 'Healthy childhood']
     },
     {
-      title: 'Emergency & Urgent Care',
+      title: 'Emergency Care',
       description:
-        '24/7 triage and stabilization for injuries, acute illness, and time-sensitive treatment with rapid response pathways.',
+        'Timely response, stabilization, and referral support for urgent health needs when every minute matters.',
       accent: 'var(--color-secondary-blue)',
-      details: ['24/7 emergency desk', 'Trauma first-response', 'On-call clinical teams']
+      details: ['Timely response', 'Stabilization', 'Referral']
     },
     {
-      title: 'Maternity & Newborn Care',
+      title: 'Accessible Healthcare',
       description:
-        'Safe, respectful maternal care from antenatal visits to delivery, plus newborn assessment and postnatal support.',
+        'Quality healthcare close to home for pastoralist and rural communities who need dependable, practical access to care.',
       accent: 'var(--color-pink)',
-      details: ['Antenatal clinics', 'Skilled delivery support', 'Postnatal mother-baby care']
+      details: ['Quality healthcare close to home', 'Serving pastoralist communities', 'Serving rural communities']
     },
     {
-      title: 'Diagnostic Laboratory',
+      title: 'Trust & Accountability',
       description:
-        'Reliable testing services and evidence-based reporting to support faster diagnosis and better treatment decisions.',
+        'Transparent governance, ethical healthcare, and community stewardship that strengthen confidence in our care.',
       accent: 'var(--color-secondary-blue)',
-      details: ['Blood chemistry', 'Infection screening', 'Routine wellness panels']
+      details: ['Transparent governance', 'Ethical healthcare', 'Community stewardship']
     },
     {
-      title: 'Pharmacy & Medication Counseling',
+      title: 'Community Impact',
       description:
-        'Timely access to essential medicines with clear dosing guidance and adherence support from trained professionals.',
-      accent: 'var(--color-primary-blue)',
-      details: ['Prescription dispensing', 'Drug interaction advice', 'Refill planning']
-    },
-    {
-      title: 'Preventive & Community Programs',
-      description:
-        'Health education, screening drives, and outreach initiatives designed to keep families healthier for longer.',
+        'Prevention, health education, outreach, and partnerships that create lasting improvements across the community.',
       accent: 'var(--color-pink)',
-      details: ['Vaccination support', 'Community screening days', 'Nutrition and wellness education']
+      details: ['Prevention', 'Health education', 'Outreach and partnerships']
     }
   ]
 
@@ -69,50 +62,44 @@ const Services = () => {
                 backgroundColor: 'color-mix(in srgb, var(--color-secondary-blue) 12%, white)'
               }}
             >
-           Our Services
+              Our Pillars
             </p>
             <h2
               className="mt-5 text-4xl font-black leading-tight md:text-5xl"
               style={{ color: 'var(--color-primary-blue)' }}
             >
-              Hospital services built around
+            The five pillars of 
               <span className="block" style={{ color: 'var(--color-pink)' }}>
-                real community health needs.
+              care and community trust
               </span>
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-              From emergency response to preventive care, Rumuruti Community Hospital provides high-impact
-              services that are practical, affordable, and centered on patient dignity.
+              Every service now speaks to the same foundation: maternal and child health, emergency care,
+              accessible healthcare, trust and accountability, and community impact.
             </p>
           </div>
 
-          <div className="rounded-3xl border border-white/70 bg-white/85 p-6 shadow-xl backdrop-blur">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">Service Coverage</p>
-            <div className="mt-5 grid grid-cols-2 gap-4">
-              <div>
-                <p className="text-3xl font-extrabold" style={{ color: 'var(--color-primary-blue)' }}>
-                  24/7
-                </p>
-                <p className="text-sm text-slate-500">Emergency support</p>
-              </div>
-              <div>
-                <p className="text-3xl font-extrabold" style={{ color: 'var(--color-secondary-blue)' }}>
-                  6+
-                </p>
-                <p className="text-sm text-slate-500">Clinical departments</p>
-              </div>
-              <div>
-                <p className="text-3xl font-extrabold" style={{ color: 'var(--color-pink)' }}>
-                  12k+
-                </p>
-                <p className="text-sm text-slate-500">Patients served yearly</p>
-              </div>
-              <div>
-                <p className="text-3xl font-extrabold" style={{ color: 'var(--color-primary-blue)' }}>
-                  100%
-                </p>
-                <p className="text-sm text-slate-500">Patient-first approach</p>
-              </div>
+          <div className="overflow-hidden rounded-3xl border border-white/70 bg-white/85 shadow-xl backdrop-blur">
+            <div className="relative">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1661962428291-7ec1fd509076?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGlsbGFyc3xlbnwwfHwwfHx8MA%3D%3D"
+                alt="Rumuruti Community Hospital care and community support"
+                className="h-28 w-full object-cover"
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    'linear-gradient(180deg, transparent 35%, color-mix(in srgb, var(--color-primary-blue) 82%, black) 100%)'
+                }}
+              />
+            </div>
+            <div className="p-6 text-white" style={{ backgroundColor: 'var(--color-primary-blue)' }}>
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/70">Why these pillars matter</p>
+              <p className="mt-3 text-lg font-bold leading-7">
+                The image of care we want to build is simple: mothers feel safe, children are protected, families
+                stay close to quality care, and the community can trust the hospital it supports.
+              </p>
             </div>
           </div>
         </div>
@@ -167,18 +154,18 @@ const Services = () => {
         >
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="max-w-xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/70">Need Immediate Support?</p>
-              <h3 className="mt-2 text-3xl font-black leading-tight">Talk to our care team and get directed to the right service fast.</h3>
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/70">Need immediate support?</p>
+              <h3 className="mt-2 text-3xl font-black leading-tight">Talk to our care team and get directed to the right pillar fast.</h3>
             </div>
             <button
                 onClick={openModal}
               className="rounded-xl px-6 cursor-pointer py-4 text-sm font-bold transition-transform hover:-translate-y-0.5"
               style={{
                 backgroundColor: 'var(--color-pink)',
-                boxShadow: '0 14px 26px color-mix(in srgb, var(--color-pink) 36%, transparent)'
+
               }}
             >
-              Book a Consultation
+              Book a Visit
             </button>
           </div>
         </div>

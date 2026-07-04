@@ -14,7 +14,7 @@ const WhatsAppChat = () => {
     event.preventDefault();
 
     const trimmedMessage = message.trim();
-    const text = trimmedMessage.length > 0 ? trimmedMessage : "Hi, I need help with cleaning services.";
+    const text = trimmedMessage.length > 0 ? trimmedMessage : "Hi, I need help with maternal, child, or community care.";
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
     window.open(url, "_blank", "noopener,noreferrer");
@@ -40,7 +40,7 @@ const WhatsAppChat = () => {
             type="text"
             value={message}
             onChange={(event) => setMessage(event.target.value)}
-            placeholder="Type message..."
+            placeholder="Type your message..."
             className="min-w-0 flex-1 rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-200"
             aria-label="Message for WhatsApp"
           />

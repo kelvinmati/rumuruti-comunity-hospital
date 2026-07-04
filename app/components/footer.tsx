@@ -31,7 +31,9 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <div className="text-center md:text-left">
             <h3 className="text-2xl font-black">Rumuruti Community Hospital</h3>
-            <p className="mt-2 text-sm text-white/80">Compassionate, accessible healthcare for everyone.</p>
+            <p className="mt-2 text-sm text-white/80">
+              Saving mothers, protecting children, strengthening communities.
+            </p>
           </div>
 
           <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">

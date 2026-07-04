@@ -44,9 +44,9 @@ const AppointmentForm = ({ onSuccess }: AppointmentFormProps) => {
   if (isSubmitted) {
     return (
       <div className='px-6 py-8'>
-        <h3 className='text-xl font-semibold text-[#0e3a5c]'>Appointment request received</h3>
+        <h3 className='text-xl font-semibold text-[#0e3a5c]'>Request received</h3>
         <p className='mt-2 text-slate-600'>
-          Thank you. Our care team will call or email you shortly to confirm your appointment.
+          Thank you. Our care team will call or email you shortly to confirm your visit and next steps.
         </p>
         <button
           type='button'
@@ -108,12 +108,12 @@ const AppointmentForm = ({ onSuccess }: AppointmentFormProps) => {
             onChange={handleChange}
             className='mt-1 w-full rounded-lg border border-slate-300 px-3 py-2.5 text-sm focus:border-primary-blue focus:outline-none'
           >
-            <option value=''>Select a service</option>
-            <option value='general-consultation'>General Consultation</option>
-            <option value='maternity-care'>Maternity Care</option>
-            <option value='pediatric-care'>Pediatric Care</option>
-            <option value='laboratory-tests'>Laboratory Tests</option>
-            <option value='emergency-follow-up'>Emergency Follow-up</option>
+            <option value=''>Select a pillar</option>
+            <option value='maternal-child-health'>Maternal & Child Health</option>
+            <option value='emergency-care'>Emergency Care</option>
+            <option value='accessible-healthcare'>Accessible Healthcare</option>
+            <option value='trust-accountability'>Trust & Accountability</option>
+            <option value='community-impact'>Community Impact</option>
           </select>
         </label>
 
@@ -143,7 +143,7 @@ const AppointmentForm = ({ onSuccess }: AppointmentFormProps) => {
       </div>
 
       <label className='mt-4 block text-sm font-medium text-slate-700'>
-        Additional Notes
+          Additional Notes
         <textarea
           name='notes'
           value={formState.notes}

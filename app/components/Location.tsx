@@ -41,8 +41,8 @@ const Location = () => {
               </span>
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-              Easily locate Rumuruti Community Hospital on the map below and plan your visit with our
-              weekly operating schedule.
+              Easily locate Rumuruti Community Hospital on the map below and plan your visit for maternal,
+              child, emergency, or follow-up care.
             </p>
 
             <div className="mt-8 overflow-hidden rounded-3xl border border-white/80 bg-white/90 shadow-xl">
