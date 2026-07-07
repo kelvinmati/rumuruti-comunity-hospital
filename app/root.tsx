@@ -15,6 +15,8 @@ function AppLayout() {
       <main>
        <Outlet />
       </main>
+
+
       <Footer />
       {/* <WhatsAppChat /> */}
       <BookingModal isOpen={isOpen} onClose={closeModal} />

@@ -1,62 +1,73 @@
+import { Mail, MapPin, Phone } from 'lucide-react'
 import React from 'react'
+import Logo from '~/utils/Logo'
 
-const quickLinks = [
-  { label: 'Home', href: '/#home' },
-  { label: 'Services', href: '/#services' },
-  { label: 'Testimonials', href: '/#testimonials' },
-  { label: 'Location', href: '/#location' }
-]
+import { FaFacebook ,FaInstagram,FaTwitter,FaLinkedin} from "react-icons/fa";
 
-const Footer = () => {
+
+const footer = () => {
+
+  const socialLinks = [
+    { icon: <FaFacebook size={25} />, url: "https://www.facebook.com" },
+    { icon: <FaInstagram size={25} />, url: "https://www.instagram.com" },
+    { icon: <FaTwitter size={25} />, url: "https://www.twitter.com" },
+    { icon: <FaLinkedin size={25} />, url: "https://www.linkedin.com" },
+  ];
   return (
-    <footer
-      className="relative overflow-hidden text-white"
-      style={{
-        background:
-          'linear-gradient(120deg, color-mix(in srgb, var(--color-primary-blue) 94%, black), var(--color-secondary-blue))'
-      }}
-    >
-      <div className="pointer-events-none absolute inset-0 opacity-40">
-        <div
-          className="absolute -left-20 top-0 h-56 w-56 rounded-full blur-3xl"
-          style={{ backgroundColor: 'color-mix(in srgb, var(--color-pink) 28%, transparent)' }}
-        />
-        <div
-          className="absolute -right-16 bottom-0 h-44 w-44 rounded-full blur-3xl"
-          style={{ backgroundColor: 'color-mix(in srgb, var(--color-secondary-blue) 40%, white)' }}
-        />
-      </div>
-
-      <div className="relative mx-auto w-[90%] py-12">
-        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-          <div className="text-center md:text-left">
-            <h3 className="text-2xl font-black">Rumuruti Community Hospital</h3>
-            <p className="mt-2 text-sm text-white/80">
-              Saving mothers, protecting children, strengthening communities.
+      <footer className="bg-[#0B2A4A] pt-14 pb-8">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-4 gap-10">
+          <div>
+            <Logo light={true} />
+            <p className="text-white/60 text-[12.5px] mt-4 max-w-xs leading-relaxed">
+              RCH exists to ensure that every mother, child, and family in our community has access to
+              quality, dignified, and timely healthcare.
             </p>
+            <div className="flex gap-3 mt-5">
+              {
+                socialLinks.map((link, index) => (
+                  <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
+                    {link.icon}
+                  </a>
+                ))  
+              }
+              
+            </div>
           </div>
-
-          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-            {quickLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-semibold text-white/90 transition-colors hover:text-white"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
+          <div>
+            <h4 className="font-heading font-bold text-white text-[13.5px] mb-4">Quick Links</h4>
+            <ul className="space-y-2.5 text-[13px] text-white/60">
+              {["About RCH", "Our Services", "Our Impact", "Contact Us"].map((l) => (
+                <li key={l}><a href="#" className="hover:text-white transition-colors">{l}</a></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-heading font-bold text-white text-[13.5px] mb-4">Our Services</h4>
+            <ul className="space-y-2.5 text-[13px] text-white/60">
+              {["Outpatient Care", "Maternal Care", "Child Health", "Laboratory Services", "Emergency Care"].map((l) => (
+                <li key={l}><a href="#" className="hover:text-white transition-colors">{l}</a></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-heading font-bold text-white text-[13.5px] mb-4">Get in Touch</h4>
+            <ul className="space-y-3 text-[13px] text-white/60">
+              <li className="flex items-start gap-2"><MapPin size={15} className="mt-0.5 shrink-0" /> Rumuruti, Laikipia County, Kenya</li>
+              <li className="flex items-center gap-2"><Phone size={15} className="shrink-0" /> +254 700 123 456</li>
+              <li className="flex items-center gap-2"><Mail size={15} className="shrink-0" /> care@rchrumuruti.org</li>
+            </ul>
+          </div>
         </div>
-
-        <div className="mt-8 border-t border-white/20 pt-5 text-center">
-          <p className="text-xs text-white/75 sm:text-sm">
-            © {new Date().getFullYear()} Rumuruti Community Hospital. All rights reserved.
-          </p>
+        <div className="max-w-7xl mx-auto px-5 md:px-8 mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-3 text-[12px] text-white/50">
+          <span>© 2026 Rumuruti Community Hospital. All rights reserved.</span>
+          <div className="flex gap-5">
+            <a href="#" className="hover:text-white">Privacy Policy</a>
+            <a href="#" className="hover:text-white">Terms of Use</a>
+            <a href="#" className="hover:text-white">Safeguarding Policy</a>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
   )
 }
 
-export default Footer
+export default footer

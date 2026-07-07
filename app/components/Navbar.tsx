@@ -1,51 +1,65 @@
-import { Activity, Calendar, Clock, MapPin, Phone } from 'lucide-react'
+import React, { useState } from 'react'
+// import  logo from "../../public/rlogo-removebg-preview.png"
+import {
+  MapPin, Users, HeartPulse, CalendarCheck, Handshake, ArrowRight,
+  Siren, ShieldCheck, Stethoscope, FlaskConical, Pill, Activity,
+  Ambulance, HandHeart, Menu, X, Mail, Phone,  ChevronRight
+} from "lucide-react";
+import Logo from '~/utils/Logo';
 
-import logo from "../../public/logo.jpeg"
+
+// function Logo({ light }) {
+//   return (
+//     <div className="flex items-center gap-2.5">
+//       <img src={logo} alt="Rumuruti Community Hospital" className="h-15 w-auto" />
+//       <div className="leading-tight">
+//         <div className={`font-heading font-bold text-[15px] tracking-tight ${light ? "text-white" : "text-[#0B2A4A]"}`}>
+//           RCH <span className="font-medium opacity-70">| Rumuruti Community Hospital</span>
+//         </div>
+//         <div className={`text-[11px] ${light ? "text-white/70" : "text-[#5B6B7F]"}`}>
+//           Accessible, Trusted, Life-Saving Community Healthcare
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 const Navbar = () => {
+
+    const [menuOpen, setMenuOpen] = useState(false);
+
+  const NAV_LINKS = ["Home", "About RCH", "Our Services", "Partners", "News & Insights"];
+
   return (
-    <div>
-            <div className="bg-primary-blue text-white py-2 px-6 flex justify-between items-center text-sm">
-        <div className="flex items-center gap-4">
-          <span className="flex items-center gap-1"><Phone size={14} /> Emergency: +254 700 000 000</span>
-          <span className="hidden md:flex items-center gap-1"><Clock size={14} /> 24/7 Care</span>
-        </div>
-        <div className="flex items-center gap-4">
-          <span className="flex items-center gap-1"><MapPin size={14} /> Rumuruti Town, Kenya</span>
-        </div>
-      </div>
-            <nav className="sticky w-[90%] mx-auto top-0 z-50  backdrop-blur-md  px-6 py-4 flex justify-between items-center" 
-                    style={{
-          background:
-            'radial-gradient(60rem 30rem at 10% 10%, color-mix(in srgb, var(--color-secondary-blue) 16%, white), transparent 70%), radial-gradient(50rem 26rem at 100% 5%, color-mix(in srgb, var(--color-pink) 12%, white), transparent 75%), linear-gradient(135deg, color-mix(in srgb, var(--color-primary-blue) 8%, white), #ffffff 62%)'
-        }}
-            
-            >
-        {/* <div className="flex items-center gap-2">
-          <div className="bg-blue-600 p-2 rounded-lg">
-            <Activity className="text-white" size={24} />
+       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[#EEE7D8]">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between">
+          <Logo light={false} />
+          <nav className="hidden lg:flex items-center gap-7">
+            {NAV_LINKS.map((l) => (
+              <a key={l} href="#" className="text-[14px] font-medium text-[#16233A]/80 hover:text-[#C81854] transition-colors">
+                {l}
+              </a>
+            ))}
+          </nav>
+          <div className="hidden lg:block">
+            <a href="#partner" className="inline-flex items-center gap-1.5 bg-[#C81854] text-white text-[14px] font-semibold px-5 py-2.5 rounded-full hover:bg-[#B01449] transition-colors cta-shadow">
+              Partner With Us <ArrowRight size={15} />
+            </a>
           </div>
-          <span className="text-xl font-bold tracking-tight text-blue-900">Rumuruti Community</span>
-        </div> */}
-        <div>
-          <img  src={logo}  className='h-[180px] '  alt="Rumuruti Community Hospital" />
+          <button className="lg:hidden" onClick={() => setMenuOpen((v) => !v)} aria-label="Toggle menu">
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
-        <div className="hidden md:flex gap-8 font-medium text-slate-600">
-          <a href="#" className="hover:text-blue-600 transition">Home</a>
-          <a href="#about" className="hover:text-blue-600 transition">Our mission</a>
-          <a href="#services" className="hover:text-blue-600 transition">Care services</a>
-          <a href="#testimonials" className="hover:text-blue-600 transition">Community stories</a>
-          <a href="#contact-location" className="hover:text-blue-600 transition">Contact & location</a>
-        </div>
-        <div className='flex gap-3'>
-                  <button className="bg-pink text-white px-5 py-2.5 rounded-full font-semibold transition flex items-center gap-2">
-          <Calendar size={18} />Support the Mission
-        </button>
-                <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2.5 rounded-full font-semibold transition flex items-center gap-2">
-          <Calendar size={18} /> Book Appointment
-        </button>
-        </div>
-      </nav>
-    </div>
+        {menuOpen && (
+          <div className="lg:hidden border-t border-[#EEE7D8] px-5 py-4 flex flex-col gap-3">
+            {NAV_LINKS.map((l) => (
+              <a key={l} href="#" className="text-[14px] font-medium text-[#16233A]/80">{l}</a>
+            ))}
+            <a href="#partner" className="mt-2 inline-flex justify-center items-center gap-1.5 bg-[#C81854] text-white text-[14px] font-semibold px-5 py-2.5 rounded-full">
+              Partner With Us <ArrowRight size={15} />
+            </a>
+          </div>
+        )}
+      </header>
   )
 }
 

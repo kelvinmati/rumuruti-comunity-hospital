@@ -1,107 +1,125 @@
-import React from 'react'
-import { Mail, Phone } from 'lucide-react'
 
-const Location = () => {
-  const operatingHours = [
-    { day: 'Monday - Friday', time: '8:00 AM - 8:00 PM' },
-    { day: 'Saturday', time: '8:00 AM - 5:00 PM' },
-    { day: 'Sunday', time: '9:00 AM - 3:00 PM' },
-    { day: 'Public Holidays', time: '9:00 AM - 1:00 PM' }
-  ]
 
+import React from "react";
+import { ArrowRight, MapPin, Banknote, Clock, HeartCrack } from "lucide-react";
+const MAP_EMBED_URL =
+  "https://www.google.com/maps?q=Rumuruti%20Town,%20Kenya&output=embed";
+
+const TOWNS = [
+  { name: "Maralal", km: 90, style: "top-[14%] left-[28%]" },
+  { name: "Samburu", km: 120, style: "top-[10%] left-[62%]" },
+  { name: "Nanyuki", km: 85, style: "top-[58%] left-[68%]" },
+  { name: "Nyahururu", km: 60, style: "top-[74%] left-[22%]" },
+];
+
+const PROBLEMS = [
+  { icon: MapPin, label: "Long Distances" },
+  { icon: Banknote, label: "High Travel Costs" },
+  { icon: Clock, label: "Delayed Care" },
+  { icon: HeartCrack, label: "Lives at Risk" },
+];
+
+export default function Location() {
   return (
-    <section className="relative overflow-hidden py-24">
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(40rem 22rem at 5% 0%, color-mix(in srgb, var(--color-secondary-blue) 14%, white), transparent 70%), radial-gradient(32rem 20rem at 98% 8%, color-mix(in srgb, var(--color-pink) 12%, white), transparent 75%), linear-gradient(180deg, #ffffff 0%, color-mix(in srgb, var(--color-primary-blue) 5%, white) 100%)'
-        }}
-      />
+    <section className="font-body bg-white py-10 md:py-5 md:mb-10">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+        .font-heading { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-body { font-family: 'Inter', sans-serif; }
+        .cta-shadow-navy { box-shadow: 0 8px 18px -6px rgba(11,42,74,0.35); }
+      `}</style>
 
-      <div className="relative mx-auto w-[90%]">
-        <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr] items-center lg:items-start">
-          <div>
-            <p
-              className="inline-flex rounded-full px-4 py-2 text-sm font-semibold"
-              style={{
-                color: 'var(--color-primary-blue)',
-                backgroundColor: 'color-mix(in srgb, var(--color-secondary-blue) 12%, white)'
-              }}
-            >
-              Visit Our Hospital
-            </p>
-            <h2
-              className="mt-5 text-4xl font-black leading-tight md:text-5xl"
-              style={{ color: 'var(--color-primary-blue)' }}
-            >
-              Find us in
-              <span className="block" style={{ color: 'var(--color-pink)' }}>
-                Rumuruti Town, Kenya
-              </span>
-            </h2>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-              Easily locate Rumuruti Community Hospital on the map below and plan your visit for maternal,
-              child, emergency, or follow-up care.
-            </p>
+      <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-[1fr_1.6fr] gap-12 items-center">
+        {/* LEFT — copy */}
+        <div>
+          <span className="text-[12px] font-bold tracking-wide uppercase text-[#C81854]">
+            Why RCH Exists
+          </span>
+          <h2 className="font-heading font-bold text-[#0B2A4A] text-[28px] md:text-[34px] mt-3 leading-tight">
+            We exist to close
+            <br />
+            the gap in healthcare access.
+          </h2>
+          <p className="text-[#5B6B7F] mt-4 text-[15px] md:text-[15.5px] max-w-md leading-relaxed">
+            Families in our region travel long distances for basic and
+            emergency care. RCH was founded by the community to ensure that
+            no mother, child, or family is left behind.
+          </p>
+          <a
+            href="#about"
+            className="mt-7 inline-flex items-center gap-2 bg-[#0B2A4A] text-white text-[13px] font-bold tracking-wide uppercase px-6 py-3.5 rounded-full cta-shadow-navy hover:bg-[#0d3459] transition-colors"
+          >
+            Learn More About RCH <ArrowRight size={15} />
+          </a>
+        </div>
 
-            <div className="mt-8 overflow-hidden rounded-3xl border border-white/80 bg-white/90 shadow-xl">
-              <iframe
-                title="Rumuruti Community Hospital Location"
-                src="https://www.google.com/maps?q=Rumuruti%20Town,%20Kenya&output=embed"
-                className="h-[360px] w-full md:h-[430px]"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-          </div>
+        {/* RIGHT — map */}
+        <div className="relative">
+          <div className="relative rounded-2xl overflow-hidden border border-[#E7E9EE] shadow-sm aspect-[16/10] bg-[#EDEBE3]">
+            <iframe
+              title="Map showing Rumuruti Town, Kenya"
+              src={MAP_EMBED_URL}
+              className="absolute inset-0 w-full h-full"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
 
-          <div className="rounded-3xl border border-white/70 bg-white/88 p-7 h-full shadow-xl backdrop-blur md:p-8">
-            <h3 className="text-2xl font-black" style={{ color: 'var(--color-primary-blue)' }}>
-              Operating Hours
-            </h3>
-            <p className="mt-2 text-sm text-slate-600">Emergency services are available 24/7 for urgent care needs.</p>
+            {/* Overlay: Rumuruti pin + town distance labels (decorative, non-interactive) */}
+            <div className="absolute inset-0 pointer-events-none">
+              {/* center Rumuruti marker */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full flex flex-col items-center">
+                <div className="w-9 h-9 rounded-full bg-[#C81854] border-4 border-white shadow-lg flex items-center justify-center">
+                  <MapPin size={16} className="text-white" fill="white" />
+                </div>
+                <span className="mt-1.5 bg-white/95 px-2.5 py-1 rounded-md text-[11.5px] font-bold text-[#0B2A4A] tracking-wide shadow-sm">
+                  RUMURUTI
+                </span>
+              </div>
 
-            <div className="mt-6 space-y-3">
-              {operatingHours.map((slot) => (
-                <div
-                  key={slot.day}
-                  className="flex items-center justify-between rounded-xl border border-white bg-white p-4 shadow-sm"
-                >
-                  <p className="font-semibold text-slate-700">{slot.day}</p>
-                  <p className="text-sm font-bold" style={{ color: 'var(--color-secondary-blue)' }}>
-                    {slot.time}
-                  </p>
+              {/* surrounding towns */}
+              {TOWNS.map(({ name, km, style }) => (
+                <div key={name} className={`absolute ${style} -translate-x-1/2 -translate-y-1/2 flex flex-col items-center`}>
+                  <span className="w-2 h-2 rounded-full bg-[#0E7C5A] border-2 border-white shadow" />
+                  <span className="mt-1 bg-white/90 px-2 py-0.5 rounded text-[10.5px] font-semibold text-[#0B2A4A] shadow-sm whitespace-nowrap">
+                    {name}
+                  </span>
+                  <span className="text-[9.5px] text-[#5B6B7F] bg-white/80 px-1.5 rounded-sm">
+                    {km} km
+                  </span>
                 </div>
               ))}
             </div>
+          </div>
 
-            <div
-              className="mt-6 rounded-2xl p-4"
-              style={{
-                backgroundColor: 'color-mix(in srgb, var(--color-primary-blue) 9%, white)'
-              }}
-            >
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Emergency</p>
-              <p className="mt-1 text-lg font-extrabold" style={{ color: 'var(--color-primary-blue)' }}>
-                Open 24 Hours, 7 Days
-              </p>
-              <div className="mt-4 space-y-2">
-                <p className="flex items-center gap-2 text-sm font-semibold text-slate-700">
-                  <Phone size={16} style={{ color: 'var(--color-secondary-blue)' }} />
-                  +254 700 000 000
-                </p>
-                <p className="flex items-center gap-2 text-sm font-semibold text-slate-700">
-                  <Mail size={16} style={{ color: 'var(--color-secondary-blue)' }} />
-                  rumuruti@gmail.com
-                </p>
-              </div>
-            </div>
+          {/* Kenya locator inset */}
+          {/* <div className="hidden sm:block absolute -top-5 -right-5 w-28 h-28 bg-white rounded-xl shadow-lg border border-[#E7E9EE] p-2">
+            <svg viewBox="0 0 200 200" className="w-full h-full">
+              <path
+                d="M60 15 L140 20 L165 55 L150 90 L170 120 L150 165 L110 185 L70 175 L45 140 L55 100 L35 65 Z"
+                fill="#BBD6EA"
+                stroke="#8FB8D4"
+                strokeWidth="1.5"
+              />
+              <circle cx="98" cy="95" r="12" fill="#C81854" opacity="0.85" />
+            </svg>
+          </div> */}
+
+          {/* Floating "the problem" card */}
+          <div className="absolute -bottom-6 -right-3 sm:-right-6 bg-white rounded-xl shadow-xl border border-[#E7E9EE] px-5 py-4 w-[188px]">
+            <ul className="space-y-2.5">
+              {PROBLEMS.map(({ icon: Icon, label }) => (
+                <li key={label} className="flex items-center gap-2.5">
+                  <Icon size={15} className="text-[#C81854] shrink-0" />
+                  <span className="text-[12px] font-semibold text-[#0B2A4A] leading-tight">
+                    {label}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default Location
