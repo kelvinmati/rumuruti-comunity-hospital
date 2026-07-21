@@ -11,11 +11,10 @@ function AppLayout() {
 
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <main>
        <Outlet />
       </main>
-
 
       <Footer />
       {/* <WhatsAppChat /> */}

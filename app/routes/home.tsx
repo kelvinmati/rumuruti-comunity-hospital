@@ -16,31 +16,25 @@ import Testimonials from '~/components/Testimonials'
 const home = () => {
   return (
     <div>
-      <Navbar />
-      <Hero/>
-
-      <Location/>
-      <OurPillars/>
-      <Services/>
-      <ImpactBanner/>
-      <Partners/>
-      <News/>
-     {/* <Hero/>
-
-     <section id="services" className="scroll-mt-28">
-      <Services/>
-     </section>
-          <section id="about" className="scroll-mt-28">
-      <Gallarey/>
-     </section>
-     <section id="testimonials" className="scroll-mt-28">
-      <Testimonials/>
-     </section>
-     <section id="contact-location" className="scroll-mt-28">
-      <Location/>
-     </section> */}
-
-     <Test/>
+      <section id="home">
+        <Hero />
+      </section>
+      <section id="about" className="scroll-mt-20">
+        <OurPillars />
+      </section>
+      <section id="services" className="scroll-mt-20">
+        <Services />
+      </section>
+      <ImpactBanner />
+      <section id="partners" className="scroll-mt-20">
+        <Partners />
+      </section>
+      <section id="testimonials" className="scroll-mt-20">
+        <Test />
+      </section>
+      <section id="contact" className="scroll-mt-20">
+        <Location />
+      </section>
     </div>
   )
 }

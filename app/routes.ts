@@ -5,5 +5,6 @@ export default [
   index("routes/home.tsx"),      // Home/Landing page (Hero, Services, etc.)
   // route("about", "routes/About.tsx"), // Separate About Us page
 //   route("contact-us", "routes/contact-us.tsx"),
-// route("test", "routes/test.tsx"),
+route("news", "components/News.tsx"), // News & Insights page
+  route("news/:postId", "components/NewsDetail.tsx"), // News detail page
 ] satisfies RouteConfig;

@@ -9,9 +9,12 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^16.2.1",
+    "@contentful/rich-text-types": "^17.2.7",
     "@emailjs/browser": "^4.4.1",
     "@react-router/node": "7.15.0",
     "@react-router/serve": "7.15.0",
+    "contentful": "^11.12.7",
     "isbot": "^5.1.36",
     "lucide-react": "^1.23.0",
     "react": "^19.2.6",
