@@ -11,12 +11,11 @@ function AppLayout() {
 
   return (
     <>
-      <Navbar />
-      <main>
+      {/* <Navbar /> */}
+      {/* <main>
        <Outlet />
-      </main>
-
-      <Footer />
+      </main> */}
+      {/* <Footer /> */}
       {/* <WhatsAppChat /> */}
       <BookingModal isOpen={isOpen} onClose={closeModal} />
       <ScrollRestoration />

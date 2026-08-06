@@ -6,5 +6,5 @@ export default [
   // route("about", "routes/About.tsx"), // Separate About Us page
 //   route("contact-us", "routes/contact-us.tsx"),
 route("news", "components/News.tsx"), // News & Insights page
-  route("news/:postId", "components/NewsDetail.tsx"), // News detail page
+route("news/:postId", "components/NewsDetail.tsx"), // News detail page
 ] satisfies RouteConfig;
