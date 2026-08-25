@@ -3,7 +3,7 @@
 import React from "react";
 import { ArrowRight, MapPin, Banknote, Clock, HeartCrack } from "lucide-react";
 const MAP_EMBED_URL =
-  "https://www.google.com/maps?q=Rumuruti%20Town,%20Kenya&output=embed";
+  "https://www.google.com/maps?q=Seriobon%20Town,%20Kenya&output=embed";
 
 const TOWNS = [
   { name: "Maralal", km: 90, style: "top-[14%] left-[28%]" },
@@ -33,7 +33,7 @@ export default function Location() {
         {/* LEFT — copy */}
         <div>
           <span className="text-[12px] font-bold tracking-wide uppercase text-[#C81854]">
-            Why RCH Exists
+            Why SHC Exists
           </span>
           <h2 className="font-heading font-bold text-[#0B2A4A] text-[28px] md:text-[34px] mt-3 leading-tight">
             We exist to close
@@ -42,14 +42,14 @@ export default function Location() {
           </h2>
           <p className="text-[#5B6B7F] mt-4 text-[15px] md:text-[15.5px] max-w-md leading-relaxed">
             Families in our region travel long distances for basic and
-            emergency care. RCH was founded by the community to ensure that
+            emergency care. SHC was founded by the community to ensure that
             no mother, child, or family is left behind.
           </p>
           <a
             href="#about"
             className="mt-7 inline-flex items-center gap-2 bg-[#0B2A4A] text-white text-[13px] font-bold tracking-wide uppercase px-6 py-3.5 rounded-full cta-shadow-navy hover:bg-[#0d3459] transition-colors"
           >
-            Learn More About RCH <ArrowRight size={15} />
+            Learn More About SHC <ArrowRight size={15} />
           </a>
         </div>
 
@@ -57,7 +57,7 @@ export default function Location() {
         <div className="relative">
           <div className="relative rounded-2xl overflow-hidden border border-[#E7E9EE] shadow-sm aspect-[16/10] bg-[#EDEBE3]">
             <iframe
-              title="Map showing Rumuruti Town, Kenya"
+              title="Map showing Seriobon Town, Kenya"
               src={MAP_EMBED_URL}
               className="absolute inset-0 w-full h-full"
               style={{ border: 0 }}
@@ -65,15 +65,15 @@ export default function Location() {
               referrerPolicy="no-referrer-when-downgrade"
             />
 
-            {/* Overlay: Rumuruti pin + town distance labels (decorative, non-interactive) */}
+            {/* Overlay: Seriobon pin + town distance labels (decorative, non-interactive) */}
             <div className="absolute inset-0 pointer-events-none">
-              {/* center Rumuruti marker */}
+              {/* center Seriobon marker */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full flex flex-col items-center">
                 <div className="w-9 h-9 rounded-full bg-[#C81854] border-4 border-white shadow-lg flex items-center justify-center">
                   <MapPin size={16} className="text-white" fill="white" />
                 </div>
                 <span className="mt-1.5 bg-white/95 px-2.5 py-1 rounded-md text-[11.5px] font-bold text-[#0B2A4A] tracking-wide shadow-sm">
-                  RUMURUTI
+                  SERIOBON
                 </span>
               </div>
 

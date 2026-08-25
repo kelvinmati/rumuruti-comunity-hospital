@@ -7,7 +7,7 @@ import {
 import Navbar from "./Navbar";
 
 /**
- * Rumuruti Community Hospital — Landing Page
+ * Seriobon HealthCare — Landing Page
  * -------------------------------------------------
  * Design tokens
  *  Navy      #0B2A4A  (trust, headings)
@@ -19,7 +19,7 @@ import Navbar from "./Navbar";
  *
  * Fonts: Plus Jakarta Sans (headings/eyebrows) + Inter (body/UI)
  * Signature element: the "Distance Ring" — a radial diagram plotting real
- * surrounding towns at their real relative distance from Rumuruti, with the
+ * surrounding towns at their real relative distance from Seriobon, with the
  * hospital pulsing at the center. It's the thesis of the whole page made visual:
  * healthcare access here is a function of distance.
  */
@@ -109,7 +109,7 @@ const news = [
   },
 ];
 
-const NAV_LINKS = ["Home", "About RCH", "Our Services", "Our Impact", "Partners", "Governance", "News & Insights"];
+    const NAV_LINKS = ["Home", "About SHC", "Our Services", "Our Impact", "Partners", "Governance", "News & Insights"];
 
 function Logo({ light }) {
   return (
@@ -123,10 +123,10 @@ function Logo({ light }) {
       </svg>
       <div className="leading-tight">
         <div className={`font-heading font-bold text-[15px] tracking-tight ${light ? "text-white" : "text-[#0B2A4A]"}`}>
-          RCH <span className="font-medium opacity-70">| Rumuruti Community Hospital</span>
+          SHC <span className="font-medium opacity-70">| Seriobon HealthCare</span>
         </div>
         <div className={`text-[11px] ${light ? "text-white/70" : "text-[#5B6B7F]"}`}>
-          Accessible, Trusted, Life-Saving Community Healthcare
+          Safe Births, Healthy Communities
         </div>
       </div>
     </div>
@@ -147,7 +147,7 @@ function DistanceRing() {
         <animate attributeName="opacity" values="0.2;0.05;0.2" dur="2.8s" repeatCount="indefinite" />
       </circle>
       <circle cx={cx} cy={cy} r="16" fill="#0B2A4A" />
-      <text x={cx} y={cy + 4} textAnchor="middle" fill="#fff" fontSize="9" fontWeight="700" fontFamily="Plus Jakarta Sans">RCH</text>
+      <text x={cx} y={cy + 4} textAnchor="middle" fill="#fff" fontSize="9" fontWeight="700" fontFamily="Plus Jakarta Sans">SHC</text>
 
       {townDistances.map((t) => {
         const r = Math.min(t.km * 0.85, 175);
@@ -171,7 +171,7 @@ function DistanceRing() {
   );
 }
 
-export default function RumurutiHospitalSite() {
+export default function SeriobonHealthCareSite() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
@@ -190,17 +190,17 @@ export default function RumurutiHospitalSite() {
 
 
 
-      {/* WHY RCH EXISTS — signature Distance Ring */}
+      {/* WHY SHC EXISTS — signature Distance Ring */}
       {/* <section className="bg-white pt-24 md:pt-28 pb-20">
         <div className="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-14 items-center">
           <div>
-            <span className="text-[12px] font-bold tracking-wide uppercase text-[#C81854]">Why RCH Exists</span>
+            <span className="text-[12px] font-bold tracking-wide uppercase text-[#C81854]">Why SHC Exists</span>
             <h2 className="font-heading font-bold text-[#0B2A4A] text-[28px] md:text-[36px] mt-3 leading-tight">
               We exist to close the gap in healthcare access.
             </h2>
             <p className="text-[#5B6B7F] mt-4 text-[15.5px] max-w-md">
               Families across our region travel long distances for basic and emergency care.
-              RCH was founded by the community to ensure that no mother, child, or family is left behind —
+              SHC was founded by the community to ensure that no mother, child, or family is left behind —
               wherever they live.
             </p>
             <ul className="mt-6 space-y-3">
@@ -217,13 +217,13 @@ export default function RumurutiHospitalSite() {
               ))}
             </ul>
             <a href="#about" className="mt-7 inline-flex items-center gap-1.5 bg-[#0B2A4A] text-white text-[14px] font-semibold px-5 py-3 rounded-full cta-shadow-navy hover:bg-[#0d3459] transition-colors">
-              Learn More About RCH <ArrowRight size={15} />
+              Learn More About SHC <ArrowRight size={15} />
             </a>
           </div>
           <div className="bg-white/60 border border-[#E5DCC5] rounded-2xl p-6">
             <DistanceRing />
             <p className="text-center text-[12px] text-[#5B6B7F] mt-1">
-              Approximate distance from Rumuruti to neighboring towns
+              Approximate distance from Seriobon to neighboring towns
             </p>
           </div>
         </div>
@@ -240,7 +240,7 @@ export default function RumurutiHospitalSite() {
       {/* <section id="partner" className="max-w-7xl mx-auto px-5 md:px-8 py-14">
         <div className="grid md:grid-cols-2 gap-10 items-center bg-white border border-[#EEE7D8] rounded-2xl p-6 md:p-10">
           <div>
-            <span className="text-[12px] font-bold tracking-wide uppercase text-[#C81854]">Partner With RCH</span>
+            <span className="text-[12px] font-bold tracking-wide uppercase text-[#C81854]">Partner With SHC</span>
             <h2 className="font-heading font-bold text-[#0B2A4A] text-[24px] md:text-[28px] mt-3 leading-snug">
               Join us in building a future where every family has access to quality healthcare.
             </h2>
@@ -259,7 +259,7 @@ export default function RumurutiHospitalSite() {
           </div>
           <div className="aspect-square rounded-2xl overflow-hidden">
             <img
-              alt="Community health volunteers with children in Rumuruti"
+              alt="Community health volunteers with children in Seriobon"
               src="https://images.unsplash.com/photo-1615461066841-6116e61058f4?q=80&w=1000&auto=format&fit=crop"
               className="w-full h-full object-cover"
             />
@@ -326,7 +326,7 @@ export default function RumurutiHospitalSite() {
           <div>
             <Logo light />
             <p className="text-white/60 text-[12.5px] mt-4 max-w-xs leading-relaxed">
-              RCH exists to ensure that every mother, child, and family in our community has access to
+              SHC exists to ensure that every mother, child, and family in our community has access to
               quality, dignified, and timely healthcare.
             </p>
             <div className="flex gap-3 mt-5">
@@ -340,7 +340,7 @@ export default function RumurutiHospitalSite() {
           <div>
             <h4 className="font-heading font-bold text-white text-[13.5px] mb-4">Quick Links</h4>
             <ul className="space-y-2.5 text-[13px] text-white/60">
-              {["About RCH", "Our Services", "Our Impact", "Governance", "Contact Us"].map((l) => (
+              {["About SHC", "Our Services", "Our Impact", "Governance", "Contact Us"].map((l) => (
                 <li key={l}><a href="#" className="hover:text-white transition-colors">{l}</a></li>
               ))}
             </ul>
@@ -356,14 +356,14 @@ export default function RumurutiHospitalSite() {
           <div>
             <h4 className="font-heading font-bold text-white text-[13.5px] mb-4">Get in Touch</h4>
             <ul className="space-y-3 text-[13px] text-white/60">
-              <li className="flex items-start gap-2"><MapPin size={15} className="mt-0.5 shrink-0" /> Rumuruti, Laikipia County, Kenya</li>
+              <li className="flex items-start gap-2"><MapPin size={15} className="mt-0.5 shrink-0" /> Seriobon, Laikipia County, Kenya</li>
               <li className="flex items-center gap-2"><Phone size={15} className="shrink-0" /> +254 700 123 456</li>
-              <li className="flex items-center gap-2"><Mail size={15} className="shrink-0" /> care@rchrumuruti.org</li>
+              <li className="flex items-center gap-2"><Mail size={15} className="shrink-0" /> care@seriobonhealthcare.org</li>
             </ul>
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-5 md:px-8 mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-3 text-[12px] text-white/50">
-          <span>© 2026 Rumuruti Community Hospital. All rights reserved.</span>
+          <span>© 2026 Seriobon HealthCare. All rights reserved.</span>
           <div className="flex gap-5">
             <a href="#" className="hover:text-white">Privacy Policy</a>
             <a href="#" className="hover:text-white">Terms of Use</a>

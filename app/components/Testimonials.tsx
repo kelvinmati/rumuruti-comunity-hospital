@@ -100,7 +100,7 @@ const Testimonials = () => {
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
               Real experiences from mothers, caregivers, and community members who have received maternal,
-              child, emergency, and follow-up support at Rumuruti Community Hospital.
+              child, emergency, and follow-up support at Seriobon HealthCare.
             </p>
 
             {/* <div className="mt-8 grid gap-3 sm:grid-cols-3">

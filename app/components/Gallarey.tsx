@@ -64,7 +64,7 @@ const Gallarey = () => {
           </div>
 
           <p className="max-w-xl text-sm leading-6 text-slate-600 md:text-base">
-            A visual look at how Rumuruti Community Hospital supports families through prevention,
+            A visual look at how Seriobon HealthCare supports families through prevention,
             diagnosis, treatment, and compassionate follow-up care.
           </p>
         </div>
@@ -77,7 +77,7 @@ const Gallarey = () => {
             >
               <img
                 src={image.src}
-                alt="Rumuruti Community Hospital care moment"
+                alt="Seriobon HealthCare care moment"
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />

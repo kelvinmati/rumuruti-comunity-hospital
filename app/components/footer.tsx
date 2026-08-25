@@ -19,7 +19,7 @@ const footer = () => {
           <div>
             <Logo light={true} />
             <p className="text-white/60 text-[12.5px] mt-4 max-w-xs leading-relaxed">
-              RCH exists to ensure that every mother, child, and family in our community has access to
+              SHC exists to ensure that every mother, child, and family in our community has access to
               quality, dignified, and timely healthcare.
             </p>
             <div className="flex gap-3 mt-5">
@@ -36,7 +36,7 @@ const footer = () => {
           <div>
             <h4 className="font-heading font-bold text-white text-[13.5px] mb-4">Quick Links</h4>
             <ul className="space-y-2.5 text-[13px] text-white/60">
-              {["About RCH", "Our Services", "Our Impact", "Contact Us"].map((l) => (
+              {["About SHC", "Our Services", "Our Impact", "Contact Us"].map((l) => (
                 <li key={l}><a href="#" className="hover:text-white transition-colors">{l}</a></li>
               ))}
             </ul>
@@ -52,14 +52,14 @@ const footer = () => {
           <div>
             <h4 className="font-heading font-bold text-white text-[13.5px] mb-4">Get in Touch</h4>
             <ul className="space-y-3 text-[13px] text-white/60">
-              <li className="flex items-start gap-2"><MapPin size={15} className="mt-0.5 shrink-0" /> Rumuruti, Laikipia County, Kenya</li>
+              <li className="flex items-start gap-2"><MapPin size={15} className="mt-0.5 shrink-0" /> Seriobon, Laikipia County, Kenya</li>
               <li className="flex items-center gap-2"><Phone size={15} className="shrink-0" /> +254 700 123 456</li>
-              <li className="flex items-center gap-2"><Mail size={15} className="shrink-0" /> care@rchrumuruti.org</li>
+              <li className="flex items-center gap-2"><Mail size={15} className="shrink-0" />info@seriobon.org</li>
             </ul>
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-5 md:px-8 mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-3 text-[12px] text-white/50">
-          <span>© 2026 Rumuruti Community Hospital. All rights reserved.</span>
+          <span>© 2026 Seriobon HealthCare. All rights reserved.</span>
           <div className="flex gap-5">
             <a href="#" className="hover:text-white">Privacy Policy</a>
             <a href="#" className="hover:text-white">Terms of Use</a>

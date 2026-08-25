@@ -9,7 +9,7 @@ import { MapPin, Users, HeartPulse, CalendarCheck, Handshake } from "lucide-reac
  * Full-bleed photo hero with a left-side gradient scrim for text legibility,
  * two CTAs, and a quick-facts card that overlaps the bottom edge of the image.
  *
- * Swap HERO_IMAGE for your real Rumuruti Community Hospital photograph.
+ * Swap HERO_IMAGE for your real Seriobon HealthCare photograph.
  * Colors: navy #0B2A4A (headline + primary button), magenta #C81854 (secondary button + icon accents).
  */
 
@@ -20,12 +20,12 @@ const FACTS = [
   {
     icon: "https://cdn-icons-png.flaticon.com/128/535/535239.png",
     label: "Our Location",
-    value: "Rumuruti, Laikipia County, Kenya",
+    value: "Seriobon, Laikipia County, Kenya",
   },
   {
     icon: "https://cdn-icons-png.flaticon.com/128/8215/8215621.png",
     label: "Our Community",
-    value: "Serving Rumuruti, Laikipia North & surrounding pastoralist areas",
+    value: "Serving Seriobon, Laikipia North & surrounding pastoralist areas",
   },
   {
     icon: "https://cdn-icons-png.flaticon.com/128/800/800634.png",
@@ -59,7 +59,7 @@ export default function Hero() {
       <div className="relative h-[420px] md:h-[480px] overflow-hidden">
         <img
           src={HERO_IMAGE}
-          alt="A mother holds her baby outside Rumuruti Community Hospital as a nurse looks on"
+          alt="A mother holds her baby outside Seriobon HealthCare as a nurse looks on"
           className="absolute inset-0 w-full h-full object-cover"
         />
         {/* Left-side scrim so the headline stays legible over any photo */}
@@ -73,7 +73,7 @@ export default function Hero() {
               Never Depend on Distance.
             </h1>
             <p className="mt-4 text-[#3A4A5E] text-[15px] md:text-[16.5px] max-w-md">
-              Accessible, trusted, life-saving healthcare for Rumuruti, Laikipia
+              Safe births, healthy communities — accessible healthcare for Seriobon, Laikipia
               and surrounding pastoralist communities.
             </p>
             <div className="mt-7 flex flex-wrap gap-4">

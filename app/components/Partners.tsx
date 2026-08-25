@@ -2,7 +2,7 @@ import React from "react";
 import { Handshake, Building2, Stethoscope, HeartHandshake, ArrowRight } from "lucide-react";
 
 /**
- * "Partner With RCH" section
+ * "Partner With SHC" section
  * -------------------------------------------------
  * Light gray rounded bar: eyebrow + headline + CTA on the far left,
  * four bordered partner-type cards in the middle, a photo bleeding to
@@ -51,7 +51,7 @@ export default function Partners() {
             {/* Left — copy */}
             <div className="p-6 md:p-7 flex flex-col justify-center">
               <span className="text-[12px] font-extrabold tracking-wide uppercase text-[#C81854]">
-                Partner With RCH
+                Partner With SHC
               </span>
               <p className="text-[#4B5563] text-[13.5px] mt-2.5 leading-relaxed max-w-[230px]">
                 Join us in building a future where every family has access to
@@ -87,7 +87,7 @@ export default function Partners() {
             <div className="hidden lg:block relative min-h-[220px]">
               <img
                 src={PARTNER_IMAGE}
-                alt="Community health workers with young people in Rumuruti"
+                alt="Community health workers with young people in Seriobon"
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>

@@ -9,7 +9,7 @@ import Logo from '~/utils/Logo';
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
-  { label: "About RCH", href: "#about" },
+  { label: "About SHC", href: "#about" },
   { label: "Our Services", href: "#services" },
   { label: "Partners", href: "#partners" },
   { label: "News & Insights", href: "/news" },
@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[#EEE7D8]">
-      <div className="max-w-7xl mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 h-[85px] flex items-center justify-between">
         <Logo light={false} />
         <nav className="hidden lg:flex items-center gap-7">
           {NAV_LINKS.map((link) =>

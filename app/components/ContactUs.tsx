@@ -9,8 +9,8 @@ const contactInfo = [
   },
   {
     label: 'Email',
-    value: 'rumuruti@gmail.com',
-    href: 'mailto:rumuruti@gmail.com',
+    value: 'care@seriobonhealthcare.org',
+    href: 'mailto:care@seriobonhealthcare.org',
     icon: '✉️',
   },
   {

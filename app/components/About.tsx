@@ -9,7 +9,7 @@ const About = () => {
           Saving mothers, protecting children, strengthening communities.
         </h2>
         <p className="mt-4 text-lg leading-8 text-slate-600">
-          Rumuruti Community Hospital exists to deliver respectful care that prioritizes maternal safety,
+          Seriobon HealthCare exists to deliver respectful care that prioritizes maternal safety,
           child wellbeing, and the everyday health needs of families across the community.
         </p>
       </div>
